@@ -1,0 +1,19 @@
+@model Professor
+<!--html, css, & js written by Jacob Sadler-->
+
+
+<a asp-area="Faculty" asp-controller="Professor" asp-action="Home"><img src="/images/logo.webp" class="stlcclogo"></a>
+<h1>Welcome back, @Model.FirstName</h1>
+<div class="desc">Select a course to view currently enrolled students and generate access codes.</div>
+<br>
+@foreach(Course c in ViewBag.Courses){
+<a href="course.html"><button class="button-main">@c.CourseName</button></a>
+}
+<br>
+<div class="desc">Select a report type to view and download attendance reports. Will open in a new window.</div>
+<br>
+<a href="facultycoursereport.html" target="_blank"><button class="button-main">Generate Course Report</button></a>
+<a href="facultystudentreport.html" target="_blank"><button class="button-main">Generate Student Report</button></a>
+<a asp-action="SignOut" asp-controller="Home" asp-area="">
+<button class="button-main button-back">Sign Out</button>
+</a>

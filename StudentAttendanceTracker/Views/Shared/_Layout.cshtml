@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="~/css/style.css">
+        <!--Icon probably needs to change because on white themed browsers it looks like its not there-->
+        <link rel="icon" href="~/images/icon.webp">
+        <title>@ViewData["Title"]</title>
+    </head>
+    <body>
+
+
+    <div class="container-main">
+        @RenderBody()
+        @await RenderSectionAsync("Scripts", required: false)
+    </div>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/popper.js/umd/popper.min.js"></script>
+    </body>
+</html>

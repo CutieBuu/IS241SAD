@@ -1,0 +1,20 @@
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Admin Login";
+}
+<!--html, css, & js written by Jacob Sadler-->
+
+
+<a asp-controller="Home" asp-action="Index"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>Admin Login</h1>
+
+<form class="loginform" asp-area="Admin" asp-action="Login" asp-controller="AdminAccount" >
+    <div style="color: darkred;">@ViewBag.ErrorMessage</div>
+    <label asp-for="Email">Username</label><br>
+    <input class="textinput" type="text" id="email" name="email" asp-for="Email" placeholder="  Username"><br>
+    <label asp-for="Password">Password</label><br>
+    <input asp-for="Password" class="textinput" type="password" id="pword" placeholder="  Password"><br>
+    <button class="submit "type="submit" value="Login">Login</button>
+</form> 
+
+

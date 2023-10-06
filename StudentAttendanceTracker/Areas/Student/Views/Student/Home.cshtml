@@ -1,0 +1,65 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Student Home";
+}
+
+<!--html, css, & js written by Jacob Sadler-->
+
+
+<a asp-action="Home" asp-area="Student" asp-controller="Student" ><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>Welcome back, @Model.FirstName</h1>
+<div class="desc">Select a course to check in or view attendance reports.</div>
+<br>
+@foreach (Course course in ViewBag.Courses)
+{
+    <button class="button-main">@course.CourseName</button>
+    <div class="student-dropdown">
+        <button class="button-student button-open">Check in</button>
+        <dialog class="popup">
+            <h1>Please enter an access code for @course.CourseName</h1>
+            <input class="textinput popupinput" type="text" id="accesscode" name="accesscode"><br>
+            <button class="submit button-close">Close</button> <button class="submit">Submit</button>
+        </dialog>
+        <a class="button-student" href="studentreport.html">View Attendance Report</a>
+    </div>
+}
+<a asp-action="SignOut" asp-controller="Home" asp-area="">
+    <button class="button-main button-back">Sign Out</button>
+</a>
+    @*
+
+    <button class="button-main">Course 1</button>
+    <div class="student-dropdown">
+        <button class="button-student button-open">Check in</button>
+        <dialog class="popup">
+            <h1>Please enter an access code for Course 1</h1>
+            <input class="textinput popupinput" type="text" id="accesscode" name="accesscode"><br>
+            <button class="submit button-close">Close</button> <button class="submit">Submit</button>
+        </dialog>
+        <a class="button-student" href="studentreport.html">View Attendance Report</a>
+    </div>
+    <button class="button-main">Course 2</button>
+    <div class="student-dropdown">
+        <button class="button-student button-open">Check in</button>
+        <dialog class="popup">
+            <h1>Please enter an access code for Course 2</h1>
+            <input class="textinput popupinput" type="text" id="accesscode" name="accesscode"><br>
+            <button class="submit button-close">Close</button> <button class="submit">Submit</button>
+        </dialog>
+        <a href="studentreport.html">View Attendance Report</a>
+    </div>
+    <button class="button-main">Course 3</button>
+    <div class="student-dropdown">
+        <button class="button-student button-open">Check in</button>
+        <dialog class="popup">
+            <h1>Please enter an access code for Course 3</h1>
+            <input class="textinput popupinput" type="text" id="accesscode" name="accesscode"><br>
+            <button class="submit button-close">Close</button> <button class="submit">Submit</button>
+        </dialog>
+        <a href="studentreport.html">View Attendance Report</a>
+    </div>
+    *@
+
+    <script src="/js/modalbox.js"></script>
+    <script src="/js/dropdown.js"></script>
+

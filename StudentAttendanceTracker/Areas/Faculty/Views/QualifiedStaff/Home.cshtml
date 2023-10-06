@@ -1,0 +1,19 @@
+@model QualifiedStaff
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<!--html, css, & js written by Jacob Sadler-->
+
+<a asp-area="Faculty" asp-controller="QualifiedStaff" asp-action="Home"><img src="/images/logo.webp" class="stlcclogo"></a>
+<h1>Welcome back, @Model.FirstName</h1>
+<div class="desc">As a qualified staff member, you may generate attendance reports to carry out any tasks you may need. Due to not instructing any courses, 
+    you may only generate reports on specific students.</div>
+<br>
+<div class="desc">Select "Generate Student Report" to view and download attendance reports. Will open in a new window.</div>
+<br>
+<a href="facultyreports.html" target="_blank"><button class="button-main">Generate Student Report</button></a>
+
+<a asp-action="SignOut" asp-controller="Home" asp-area="">
+    <button class="button-main button-back">Sign Out</button>
+</a>
