@@ -1,4 +1,4 @@
-
+//C# and Razor code written by Zaid Abuisba
 using Microsoft.EntityFrameworkCore;
 using StudentAttendanceTracker.Models;
 using Microsoft.IdentityModel.Tokens;
@@ -17,7 +17,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<AttendanceTrackerContext>(options => options.UseSqlServer(
 builder.Configuration.GetConnectionString("AttendanceTrackerContext") ?? ""));
 
-
+//Sets up password rules for users
 builder.Services.AddIdentity<User, IdentityRole>(options => {
     options.Password.RequiredLength = 6; 
     options.Password.RequireNonAlphanumeric = false;
@@ -90,7 +90,7 @@ app.MapAreaControllerRoute(
     areaName: "Faculty",
     pattern: "Faculty/{controller=Home}/{action=Index}/");
 
-//app.UseSession();
+
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");

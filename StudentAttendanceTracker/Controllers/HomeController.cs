@@ -1,27 +1,36 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿//C# and Razor code written by Zaid Abuisba
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StudentAttendanceTracker.Models;
-using System.Diagnostics;
-using System.Security.Principal;
 
 namespace StudentAttendanceTracker.Controllers
 {
-	public class HomeController : Controller
+    /// <summary>
+    /// Controls site functioning for the student section of the website
+    /// </summary>
+    public class HomeController : Controller
 	{
 		
 
-		private SignInManager<User> signInManager;
+		private readonly SignInManager<User> signInManager;
+        /// <summary>
+        /// HomeController constructor to assign private SignInManager object
+        /// </summary>
+        /// <param name="mngr">SignInManager object</param>
+        public HomeController(SignInManager<User> mngr) => signInManager = mngr;
 
-		public HomeController(SignInManager<User> mngr) => signInManager = mngr;
-
+        /// <summary>
+        /// Displays the index page of the website
+        /// </summary>
 		public IActionResult Index()
 		{
 			return View();
 		}
 
-        public async Task<IActionResult> SignOut()
+        /// <summary>
+        /// Logs the currently signed in user out and deletes their cookies.
+        /// </summary>
+        public async Task<IActionResult> LogOut()
         {
 			
 			await signInManager.SignOutAsync();

@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿//C# and Razor code written by Zaid Abuisba
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudentAttendanceTracker.Models
 {
+    /// <summary>
+    /// User class that inherits from the IdentityUser class. allows for adding more columns to the AspNetUsers table.
+    /// </summary>
     public class User : IdentityUser
     {
         [NotMapped]

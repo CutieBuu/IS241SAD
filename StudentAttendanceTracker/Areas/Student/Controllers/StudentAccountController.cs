@@ -1,19 +1,30 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿//C# and Razor code written by Zaid Abuisba
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StudentAttendanceTracker.Models;
 using System.Security.Claims;
 
 namespace StudentAttendanceTracker.Controllers
 {
+    /// <summary>
+    /// Account controller for students. Handles logging in for students
+    /// </summary>
     [Route("[area]/{action}")]
     [Area("Student")]
     public class StudentAccountController : Controller
     {
-        private AttendanceTrackerContext context;
-        private UserManager<User> userManager;
-        private SignInManager<User> signInManager;
-        private RoleManager<IdentityRole> roleManager;
+        private readonly AttendanceTrackerContext context;
+        private readonly UserManager<User> userManager;
+        private readonly SignInManager<User> signInManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
+        /// <summary>
+        /// StudentAccountController constructor to initialize private AttendanceTrackerContext, UserManager, SignInManager, and RoleManager objects.
+        /// </summary>
+        /// <param name="ctx">AttendanceTrackerContext object</param>
+        /// <param name="userMngr">UserManager object</param>
+        /// <param name="signInMngr">SignInManager Object</param>
+        /// <param name="roleMgr">RoleManager object</param>
         public StudentAccountController(AttendanceTrackerContext ctx,UserManager<User> userMngr, SignInManager<User> signInMngr, RoleManager<IdentityRole> roleMgr)
         {
             context = ctx;
@@ -22,7 +33,9 @@ namespace StudentAttendanceTracker.Controllers
             signInManager = signInMngr;
         }
 
-       
+        /// <summary>
+        /// Get method that sees if user is already logged in and redirects them to their appropriate page if so, otherwise brings them to student login page
+        /// </summary>
         [HttpGet]
         public IActionResult Login()
         {
@@ -31,21 +44,21 @@ namespace StudentAttendanceTracker.Controllers
 
             string role = User.FindFirstValue(ClaimTypes.Role) ?? string.Empty;
 
-            switch (role)
+            return role switch
             {
-                case "Admin":
-                    return RedirectToAction("Index", "User", new {area = "Admin"});
-                case "Student":
-                    return RedirectToAction("Home", "Student");
-                case "Professor":
-                    return RedirectToAction("Home", "Professor", new { area = "Faculty" });
-                case "QualifiedStaff":
-                    return RedirectToAction("Home", "QualifiedStaff", new { area = "Faculty" });
-                default:
-                    return View(new LoginViewModel());
-            }
+                "Admin" => RedirectToAction("Index", "User", new { area = "Admin" }),
+                "Student" => RedirectToAction("Home", "Student"),
+                "Professor" => RedirectToAction("Home", "Professor", new { area = "Faculty" }),
+                "QualifiedStaff" => RedirectToAction("Home", "QualifiedStaff", new { area = "Faculty" }),
+                _ => View(new LoginViewModel()),
+            };
         }
 
+        /// <summary>
+        /// Post method that attempts to sign user in and check to make sure they are a student
+        /// </summary>
+        /// <param name="model">LoginViewModel parameter that is assigned when user submits login request</param>
+        /// <returns>Login page if unsuccessful or the student home page</returns>
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {

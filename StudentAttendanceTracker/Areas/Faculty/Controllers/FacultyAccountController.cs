@@ -1,19 +1,30 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿//C# and Razor code written by Zaid Abuisba
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StudentAttendanceTracker.Models;
 using System.Security.Claims;
 
 namespace StudentAttendanceTracker.Controllers
 {
+    /// <summary>
+    /// Account controller for professors and qualified staff. Handles logging in for professors and qualified staff
+    /// </summary>
     [Route("[area]/{action}")]
     [Area("Faculty")]
     public class FacultyAccountController : Controller
     {
-        private AttendanceTrackerContext context;
-        private UserManager<User> userManager;
-        private SignInManager<User> signInManager;
-        private RoleManager<IdentityRole> roleManager;
+        private readonly AttendanceTrackerContext context;
+        private readonly UserManager<User> userManager;
+        private readonly SignInManager<User> signInManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
+        /// <summary>
+        /// FacultyAccountController constructor to initialize private AttendanceTrackerContext, UserManager, SignInManager, and RoleManager objects.
+        /// </summary>
+        /// <param name="ctx">AttendanceTrackerContext object</param>
+        /// <param name="userMngr">UserManager object</param>
+        /// <param name="signInMngr">SignInManager Object</param>
+        /// <param name="roleMgr">RoleManager object</param>
         public FacultyAccountController(AttendanceTrackerContext ctx, UserManager<User> userMngr, SignInManager<User> signInMngr, RoleManager<IdentityRole> roleMgr)
         {
             context = ctx;
@@ -22,7 +33,9 @@ namespace StudentAttendanceTracker.Controllers
             signInManager = signInMngr;
         }
 
-
+        /// <summary>
+        /// Get method that sees if user is already logged in and redirects them to their appropriate page if so, otherwise brings them to the faculty login page
+        /// </summary>
         [HttpGet]
         public IActionResult Login()
         {
@@ -31,21 +44,21 @@ namespace StudentAttendanceTracker.Controllers
 
             string role = User.FindFirstValue(ClaimTypes.Role) ?? string.Empty;
 
-            switch (role)
+            return role switch
             {
-                case "Admin":
-                    return RedirectToAction("Index", "User", new { area = "Admin" });
-                case "Student":
-                    return RedirectToAction("Home", "Student", new { area = "Student" });
-                case "Professor":
-                    return RedirectToAction("Home", "Professor");
-                case "QualifiedStaff":
-                    return RedirectToAction("Home", "QualifiedStaff");
-                default:
-                    return View(new LoginViewModel());
-            }
-
+                "Admin" => RedirectToAction("Index", "User", new { area = "Admin" }),
+                "Student" => RedirectToAction("Home", "Student", new { area = "Student" }),
+                "Professor" => RedirectToAction("Home", "Professor"),
+                "QualifiedStaff" => RedirectToAction("Home", "QualifiedStaff"),
+                _ => View(new LoginViewModel()),
+            };
         }
+
+        /// <summary>
+        /// Post method that attempts to sign user in and check to make sure they are a professor or qualified staff memeber
+        /// </summary>
+        /// <param name="model">LoginViewModel parameter that is assigned when user submits login request</param>
+        /// <returns>Login page if unsuccessful, qualified staff home page, or professor home page</returns>
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -58,7 +71,7 @@ namespace StudentAttendanceTracker.Controllers
                     ViewBag.ErrorMessage = "Invalid Email or Password";
                     return View(model);
                 }
-                
+
                 var roles = await userManager.GetRolesAsync(user);
                 string role = roles[0];
                 if (role != "Professor" && role != "QualifiedStaff")
@@ -66,7 +79,7 @@ namespace StudentAttendanceTracker.Controllers
                     ViewBag.ErrorMessage = "Please sign into the appropriate page.";
                     return View(model);
                 }
-                
+
                 var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
@@ -77,35 +90,6 @@ namespace StudentAttendanceTracker.Controllers
 
             return View(model);
 
-        }
-
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = new User { UserName = model.Username };
-                var result = await userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    await signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError("", error.Description);
-                    }
-                }
-            }
-            return View(model);
         }
 
     }

@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿//C# and Razor code written by Zaid Abuisba
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
 namespace StudentAttendanceTracker.Models
 {
-
+    /// <summary>
+    /// Course class that corresponds to courses table in the database
+    /// </summary>
     public class Course
     {
         public Course()

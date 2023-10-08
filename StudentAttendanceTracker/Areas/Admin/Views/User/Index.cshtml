@@ -1,4 +1,5 @@
 ﻿@model UserViewModel
+@*This page was written by Zaid Abuisba*@
 @{
     Layout = null;
     ViewData["Title"] = " | Manage Users";
@@ -9,7 +10,7 @@
 <h5 class="mt-2">
     <a asp-action="Add">Add a User</a>
 </h5>
-<a asp-action="SignOut" asp-controller="Home" asp-area="">
+<a asp-action="LogOut" asp-controller="Home" asp-area="">
     <button class="btn btn-primary">Sign Out</button>
 </a>
 <table class="table table-bordered bg-white table-sm ">
