@@ -1,16 +1,28 @@
-const toggle = evt => {
-    const course = evt.currentTarget;
-    const buttonlist = course.nextElementSibling;
+"use strict";
+var $ = function (id) { return document.getElementById(id); };
 
-    buttonlist.classList.toggle("student-dropdown");
+// the event handler for the click event of each button
+var toggle = function () {
+    var button = this;                    // clicked button     
+    var div = button.nextElementSibling;  // button's sibling div tag
+    var arr = document.querySelectorAll("button.button-dropdown");
 
-    evt.preventDefault();
+    div.classList.toggle("student-dropdown");
+
+    // allows for only one div to be displayed at a time
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] !== button) {
+            arr[i].nextElementSibling.setAttribute("class", "student-dropdown");
+        }
+    }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-    const dropdown = document.querySelectorAll("button.button-main");
+window.onload = function () {
+    var cmain = $("cmain");
+    var buttons = cmain.getElementsByClassName("button-dropdown");
 
-    for (let course of dropdown) {
-        course.addEventListener("click", toggle);
+    // attach event handler for each button    
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggle;
     }
-})
+};

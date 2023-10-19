@@ -10,22 +10,17 @@
 <h1>Welcome back, @Model.FirstName</h1>
 <div class="desc">Select a course to check in or view attendance reports.</div>
 <br>
-@foreach (Course course in ViewBag.Courses)
+@foreach (Course course in Model.Courses)
 {
-    <button class="button-main">@course.CourseName</button>
-    <div class="student-dropdown">
-        <button class="button-student button-open">Check in</button>
-        <dialog class="popup">
-            <h1>Please enter an access code for @course.CourseName</h1>
-            <input class="textinput popupinput" type="text" id="accesscode" name="accesscode"><br>
-            <button class="submit button-close">Close</button> <button class="submit">Submit</button>
-        </dialog>
-        <a class="button-student" href="studentreport.html">View Attendance Report</a>
-    </div>
+    <a asp-action="Course" asp-route-id="@course.CourseId" asp-controller="Student" asp-area="Student" class="a-main">@course.CourseName</a>
 }
-<a asp-action="LogOut" asp-controller="Home" asp-area="">
-    <button class="button-main button-back">Sign Out</button>
-</a>
+
+<div class="navbar">
+    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton" asp-area="Student" asp-action="Home" asp-controller="Student"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>
+
     @*
 
     <button class="button-main">Course 1</button>
@@ -60,6 +55,4 @@
     </div>
     *@
 
-    <script src="/js/modalbox.js"></script>
-    <script src="/js/dropdown.js"></script>
 

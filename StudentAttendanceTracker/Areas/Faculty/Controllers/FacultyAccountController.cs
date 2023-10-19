@@ -7,7 +7,7 @@ using System.Security.Claims;
 namespace StudentAttendanceTracker.Controllers
 {
     /// <summary>
-    /// Account controller for professors and qualified staff. Handles logging in for professors and qualified staff
+    /// Account controller for Instructors and qualified staff. Handles logging in for Instructors and qualified staff
     /// </summary>
     [Route("[area]/{action}")]
     [Area("Faculty")]
@@ -46,19 +46,19 @@ namespace StudentAttendanceTracker.Controllers
 
             return role switch
             {
-                "Admin" => RedirectToAction("Index", "User", new { area = "Admin" }),
+                "Admin" => RedirectToAction("Home", "Admin", new { area = "Admin" }),
                 "Student" => RedirectToAction("Home", "Student", new { area = "Student" }),
-                "Professor" => RedirectToAction("Home", "Professor"),
+                "Instructor" => RedirectToAction("Home", "Instructor"),
                 "QualifiedStaff" => RedirectToAction("Home", "QualifiedStaff"),
                 _ => View(new LoginViewModel()),
             };
         }
 
         /// <summary>
-        /// Post method that attempts to sign user in and check to make sure they are a professor or qualified staff memeber
+        /// Post method that attempts to sign user in and check to make sure they are a Instructor or qualified staff memeber
         /// </summary>
         /// <param name="model">LoginViewModel parameter that is assigned when user submits login request</param>
-        /// <returns>Login page if unsuccessful, qualified staff home page, or professor home page</returns>
+        /// <returns>Login page if unsuccessful, qualified staff home page, or Instructor home page</returns>
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -74,7 +74,7 @@ namespace StudentAttendanceTracker.Controllers
 
                 var roles = await userManager.GetRolesAsync(user);
                 string role = roles[0];
-                if (role != "Professor" && role != "QualifiedStaff")
+                if (role != "Instructor" && role != "QualifiedStaff")
                 {
                     ViewBag.ErrorMessage = "Please sign into the appropriate page.";
                     return View(model);
@@ -83,7 +83,7 @@ namespace StudentAttendanceTracker.Controllers
                 var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    return role == "Professor" ? RedirectToAction("Home", "Professor") : RedirectToAction("Home", "QualifiedStaff");
+                    return role == "Instructor" ? RedirectToAction("Home", "Instructor") : RedirectToAction("Home", "QualifiedStaff");
                 }
             }
             ViewBag.ErrorMessage = "Invalid Email or Password";

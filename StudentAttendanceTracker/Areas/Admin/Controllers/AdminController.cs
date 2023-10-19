@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using StudentAttendanceTracker.Models;
+using System.Security.Claims;
 
 namespace StudentAttendanceTracker.Areas.Admin.Controllers
 {
@@ -13,19 +14,30 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
     [Route("[area]/{action}")]
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
-    public class UserController : Controller
+    public class AdminController : Controller
     {
-        private readonly UserManager<User> userManager;
-        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly AttendanceTrackerContext _context;
         /// <summary>
         /// StudentController constructor to assign private AttendanceTrackerContext object
         /// </summary>
         /// <param name="userMngr">UserManager object</param>
         /// <param name="roleMngr">RoleManager object</param>
-        public UserController(UserManager<User> userMngr, RoleManager<IdentityRole> roleMngr)
+        public AdminController(UserManager<User> userMngr, RoleManager<IdentityRole> roleMngr, AttendanceTrackerContext context)
         {
-            userManager = userMngr;
-            roleManager = roleMngr;
+            _userManager = userMngr;
+            _roleManager = roleMngr;
+            _context = context;
+        }
+
+        /// <summary>
+        /// Displays the home page of the admin section of the site
+        /// </summary>
+        /// <returns>Admin/Admin/Home</returns>
+        public IActionResult Home()
+        {
+            return View(_context.Admins.First(x => x.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier)));
         }
 
         /// <summary>
@@ -35,15 +47,15 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             List<User> users = new();
-            foreach (User user in userManager.Users)
+            foreach (User user in _userManager.Users)
             {
-                user.RoleNames = await userManager.GetRolesAsync(user);
+                user.RoleNames = await _userManager.GetRolesAsync(user);
                 users.Add(user);
             }
             UserViewModel model = new()
             {
                 Users = users,
-                Roles = roleManager.Roles
+                Roles = _roleManager.Roles
             };
             return View(model);
         }
@@ -56,10 +68,10 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {
-            User? user = await userManager.FindByIdAsync(id);
+            User? user = await _userManager.FindByIdAsync(id);
             if (user != null)
             {
-                IdentityResult result = await userManager.DeleteAsync(user);
+                IdentityResult result = await _userManager.DeleteAsync(user);
                 if (!result.Succeeded)
                 { // if failed
                     string errorMessage = "";
@@ -81,16 +93,16 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         public async Task<IActionResult> AddToRole(string id)
         {
             string role = Request.Form["AddToRole"].ToString() ?? "";
-            IdentityRole? Role = await roleManager.FindByNameAsync(role);
+            IdentityRole? Role = await _roleManager.FindByNameAsync(role);
             if (Role == null)
             {
                 TempData["message"] = "role does not exist. ";
             }
             else
             {
-                User? user = await userManager.FindByIdAsync(id);
+                User? user = await _userManager.FindByIdAsync(id);
              
-                await userManager.AddToRoleAsync(user!, Role.Name!);
+                await _userManager.AddToRoleAsync(user!, Role.Name!);
             }
             return RedirectToAction("Index");
         }
@@ -104,12 +116,12 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         public async Task<IActionResult> RemoveFromRole(string id)
         {
             string role = Request.Form["RemoveFromRole"].ToString() ?? "";
-            User? user = await userManager.FindByIdAsync(id);
+            User? user = await _userManager.FindByIdAsync(id);
             if (user is null)
             {
                 TempData["message"] = "user does not exist";
             }
-            await userManager.RemoveFromRoleAsync(user!, role);
+            await _userManager.RemoveFromRoleAsync(user!, role);
             return RedirectToAction("Index");
         }
 
@@ -120,14 +132,14 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteRole(string id)
         {
-            IdentityRole? role = await roleManager!.FindByIdAsync(id);
+            IdentityRole? role = await _roleManager!.FindByIdAsync(id);
             if (role is null)
             {
                 TempData["message"] = "role does not exist. ";
             }
             else
             {
-                await roleManager.DeleteAsync(role);
+                await _roleManager.DeleteAsync(role);
             }
             return RedirectToAction("Index");
         }
@@ -139,7 +151,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         public async Task<IActionResult> CreateRole()
         {
             string role = Request.Form["NewRole"].ToString() ?? "";
-            await roleManager.CreateAsync(new IdentityRole(role));
+            await _roleManager.CreateAsync(new IdentityRole(role));
             return RedirectToAction("Index");
         }
     }

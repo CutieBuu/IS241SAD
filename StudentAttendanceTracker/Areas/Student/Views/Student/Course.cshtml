@@ -1,0 +1,66 @@
+﻿@model CheckInViewModel
+<!--html, css, & js written by Jacob Sadler-->
+
+<main id="cmain">
+<a asp-action="Home" asp-controller="Student"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>@Model.Course.CourseName</h1>
+<div class="desc">This is your course page for @Model.Course.CourseName Here, you can log your attendance and generate a personalized attendance report for @Model.Course.CourseName.</div>
+<br>
+
+@if (Model.AccessCode == null)
+{
+    
+    <button class="button-main button-center button-open">Log Attendance</button>
+    <dialog class="popup" id="popup">
+        <div class="desc" style="color: red">@TempData["ErrorMessage"]</div>
+        <form asp-action="CheckIn" asp-controller="Student" class="loginform">
+            <div asp-validation-summary="All"></div>
+            <label asp-for="AccessCode">Access Code:</label>
+            <input asp-for="AccessCode" class="textinput" type="text"/><br>
+            <input type="hidden" asp-for="Course.CourseId" />
+
+            <button class="submit" type="button" name="close">Close</button>
+            <input class="submit" type="submit" value="Submit">
+        </form>
+    </dialog>
+}
+else
+{
+    <form asp-action="CheckIn" asp-controller="Student">
+        
+        <div class="desc" style="color: red">@TempData["ErrorMessage"]</div>
+        <div class="desc" style="color: green">@TempData["SuccessMessage"]</div>
+        <br>
+                
+        <button type="submit" class="button-main button-center button-dropdown">Check in</button>
+        <input type="hidden" asp-for="AccessCode" />
+        <input type="hidden" asp-for="Course.CourseId" />
+    </form>
+        
+}
+
+<button class="button-main button-center button-dropdown">Generate Report</button>
+<div class="student-dropdown">
+    <button class="button-student">Weekly Report</button>
+    <button class="button-student">Monthly Report</button>
+    <button class="button-student">Semester Report</button>
+</div>
+<div class="navbar">
+    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton" asp-action="Home" asp-controller="Student"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>
+
+@if (TempData.Peek("ErrorMessage") is not null && Model.AccessCode is null)
+{
+    <script type="text/javascript">
+        const m = document.querySelector("dialog");
+        m.showModal();
+    </script>
+}
+@if (Model.AccessCode is null)
+{
+    <script defer src="~/js/modalbox.js"></script>
+}
+    <script defer src="~/js/dropdown.js"></script>
+</main>

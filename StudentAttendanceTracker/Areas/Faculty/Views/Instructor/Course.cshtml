@@ -1,0 +1,97 @@
+﻿@model Course
+
+<!--html, css, & js written by Jacob Sadler-->
+
+
+
+<a asp-action="Home" asp-controller="Instructor"><img src="/images/logo.webp" class="stlcclogo"></a>
+<h1>Attendance Records for: @Model.CourseName</h1>
+<div class="desc">Currently Enrolled Students</div>
+<br>
+<table class="studentlist">
+    @{
+        Student prevstudent = new();
+        List<Student> studentslist = Model.Students.ToList();
+        if (studentslist.Count % 2 != 0)
+        {
+            for (int i = 0; i < studentslist.Count; i++)
+            {
+
+                if (i % 2 == 0 && i >= studentslist.Count - 1)
+                {
+                    <tr class="studenttr">
+                        <td class="studenttd">@studentslist[i].FirstName</td>
+
+
+                    </tr>
+                }
+                else if (i % 2 == 0)
+                {
+                    prevstudent = studentslist[i];
+                }
+                else if (i % 2 != 0 && i < studentslist.Count - 1)
+                {
+                    <tr class="studenttr">
+                        <td class="studenttd">@prevstudent.FirstName</td>
+
+                        <td class="studenttd">@studentslist[i].FirstName</td>
+                    </tr>
+                }
+
+
+            }
+        }
+        else
+        {
+            for (int i = 0; i < studentslist.Count; i+=2)
+            {
+                <tr class="studenttr">
+                    <td class="studenttd">@studentslist[i].FirstName</td>
+           
+                    <td class="studenttd">@studentslist[i+1 >= studentslist.Count ? studentslist.Count-1 : i+1].FirstName</td>
+             
+                </tr>
+            }
+        }
+    }
+    @*
+    <tr class="studenttr">
+    <td class="studenttd">Student 1</td>
+    <td class="studenttd"></td>
+    </tr>
+    <tr class="studenttr">
+    <td class="studenttd">Student 2</td><td class="studenttd">Student 7</td>
+    </tr>
+    <tr class="studenttr">
+    <td class="studenttd">Student 3</td><td class="studenttd">Student 8</td>
+    </tr>
+    <tr class="studenttr">
+    <td class="studenttd">Student 4</td><td class="studenttd">Student 9</td>
+    </tr>
+    <tr class="studenttr">
+    <td class="studenttd">Student 5</td><td class="studenttd">Student 10</td>
+    </tr>
+    *@
+</table>
+
+@if (ViewBag.AccessCode != "")
+{
+    <h1>Your Access Code is:</h1>
+    <div class="container-accesscode">
+        @ViewBag.AccessCode
+    </div>
+}
+else
+{
+    <div class="desc">Click "Generate Code" to generate an Access Code. Access Codes expire after 5 minutes.</div>
+    <br>
+    <a asp-action="GenerateCode" asp-route-id="@Model.CourseId" asp-controller="Instructor" class="a-main">Generate Code</a>
+    
+}
+<div class="navbar">
+    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton" asp-area="Faculty" asp-action="Home" asp-controller="Instructor"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>
+
+

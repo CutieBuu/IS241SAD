@@ -20,12 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BY2NvdW50XExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Admin/Views/User/Course.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxDb3Vyc2UuY3NodG1s
+[E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Admin/Views/Admin/Course.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cQ291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Admin/Views/User/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+[E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Admin/Views/Admin/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Admin/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Admin/Views/_ViewImports.cshtml]
@@ -40,8 +44,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmFjdWx0eVxWaWV3c1xGYWN1bHR5QWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Faculty/Views/Professor/Home.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmFjdWx0eVxWaWV3c1xQcm9mZXNzb3JcSG9tZS5jc2h0bWw=
+[E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Faculty/Views/Instructor/Course.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmFjdWx0eVxWaWV3c1xJbnN0cnVjdG9yXENvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Faculty/Views/Instructor/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmFjdWx0eVxWaWV3c1xJbnN0cnVjdG9yXEhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Faculty/Views/QualifiedStaff/Home.cshtml]
@@ -58,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Student/Views/StudentAccount/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xTdHVkZW50QWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Student/Views/Student/Course.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xTdHVkZW50XENvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/C\# Web Frameworks/IS241SAD/StudentAttendanceTracker/Areas/Student/Views/Student/Home.cshtml]

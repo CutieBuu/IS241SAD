@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Mm0twc1dOo+Kb21Nmy78F9DielzKrzs7utWqmWSciOo=",
+  "Hash": "Gb0TQFEYfkNqu6XTZdhSo9EDNoQvcAYhSyuStQbnYvw=",
   "Source": "StudentAttendanceTracker",
   "BasePath": "_content/StudentAttendanceTracker",
   "Mode": "Default",
@@ -1122,6 +1122,23 @@
       "OriginalItemSpec": "wwwroot\\images\\background.jpg"
     },
     {
+      "Identity": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\images\\home.png",
+      "SourceId": "StudentAttendanceTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\",
+      "BasePath": "_content/StudentAttendanceTracker",
+      "RelativePath": "images/home.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\home.png"
+    },
+    {
       "Identity": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\images\\icon.webp",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
@@ -1154,6 +1171,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo.webp"
+    },
+    {
+      "Identity": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\images\\report.png",
+      "SourceId": "StudentAttendanceTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\",
+      "BasePath": "_content/StudentAttendanceTracker",
+      "RelativePath": "images/report.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\report.png"
+    },
+    {
+      "Identity": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\images\\signout.png",
+      "SourceId": "StudentAttendanceTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\",
+      "BasePath": "_content/StudentAttendanceTracker",
+      "RelativePath": "images/signout.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\signout.png"
     },
     {
       "Identity": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\js\\dropdown.js",

@@ -65,7 +65,7 @@ using (var scope = scopeFactory.CreateScope())
 {
     await ConfigureIdentity.CreateAdminUserAsync(scope.ServiceProvider);
     await ConfigureIdentity.CreateStudentUserAsync(scope.ServiceProvider);
-    await ConfigureIdentity.CreateProfessorUsersAsync(scope.ServiceProvider);
+    await ConfigureIdentity.CreateInstructorUsersAsync(scope.ServiceProvider);
     await ConfigureIdentity.CreateQStaffUserAsync(scope.ServiceProvider);
 }
 

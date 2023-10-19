@@ -19,9 +19,11 @@ namespace StudentAttendanceTracker.Models
 
         public string CourseName { get; set; } = null!;
 
-        public int? ProfessorId { get; set; }
+        public int? InstructorId { get; set; }
 
-        public virtual Professor? Professor { get; set; }
+        public virtual Instructor? Instructor { get; set; }
+
+        public DateTime CourseTime { get; set; } = DateTime.MinValue;
 
         public virtual ICollection<Student>? Students { get; set; } = new List<Student>();
     }

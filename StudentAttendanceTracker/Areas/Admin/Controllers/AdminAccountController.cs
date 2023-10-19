@@ -43,9 +43,9 @@ namespace StudentAttendanceTracker.Controllers
 
             return role switch
             {
-                "Admin" => RedirectToAction("Index", "User"),
+                "Admin" => RedirectToAction("Home", "Admin"),
                 "Student" => RedirectToAction("Home", "Student", new { area = "Student" }),
-                "Professor" => RedirectToAction("Home", "Professor", new { area = "Faculty" }),
+                "Instructor" => RedirectToAction("Home", "Instructor", new { area = "Faculty" }),
                 "QualifiedStaff" => RedirectToAction("Home", "QualifiedStaff", new { area = "Faculty" }),
                 _ => View(new LoginViewModel()),
             };
@@ -82,7 +82,7 @@ namespace StudentAttendanceTracker.Controllers
                 if (result.Succeeded)
                 {
 
-                    return RedirectToAction("Index", "User");
+                    return RedirectToAction("Home", "Admin");
 
                 }
             }

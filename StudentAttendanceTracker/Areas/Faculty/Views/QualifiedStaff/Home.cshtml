@@ -12,8 +12,10 @@
 <br>
 <div class="desc">Select "Generate Student Report" to view and download attendance reports. Will open in a new window.</div>
 <br>
-<a href="facultyreports.html" target="_blank"><button class="button-main">Generate Student Report</button></a>
+<a href="facultyreports.html" target="_blank" class="a-main">Generate Student Report</a>
 
-<a asp-action="LogOut" asp-controller="Home" asp-area="">
-    <button class="button-main button-back">Sign Out</button>
-</a>
+<div class="navbar">
+	<a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+	<a class="navbarbutton" asp-area="Faculty" asp-action="Home" asp-controller="QualifiedStaff"><img src="~/images/home.png" class="navbaricon">Home</a>
+	<a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>

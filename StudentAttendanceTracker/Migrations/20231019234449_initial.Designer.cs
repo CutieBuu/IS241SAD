@@ -12,7 +12,7 @@ using StudentAttendanceTracker.Models;
 namespace StudentAttendanceTracker.Migrations
 {
     [DbContext(typeof(AttendanceTrackerContext))]
-    [Migration("20231006000714_initial")]
+    [Migration("20231019234449_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -173,6 +173,52 @@ namespace StudentAttendanceTracker.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("StudentAttendanceTracker.Models.AccessCode", b =>
+                {
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("CourseID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Code");
+
+                    b.HasIndex("CourseID");
+
+                    b.ToTable("AccessCodes");
+                });
+
+            modelBuilder.Entity("StudentAttendanceTracker.Models.Administrator", b =>
+                {
+                    b.Property<int>("AdministratorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdministratorId"));
+
+                    b.Property<string>("AdministratorEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("AdministratorId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Admins");
+                });
+
             modelBuilder.Entity("StudentAttendanceTracker.Models.Assistance", b =>
                 {
                     b.Property<int>("Id")
@@ -181,7 +227,7 @@ namespace StudentAttendanceTracker.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("ClassId")
+                    b.Property<int?>("CourseId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -192,11 +238,41 @@ namespace StudentAttendanceTracker.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClassId");
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("StudentId");
 
                     b.ToTable("Assistances");
+                });
+
+            modelBuilder.Entity("StudentAttendanceTracker.Models.Attendance", b =>
+                {
+                    b.Property<int>("AttendanceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AttendanceId"));
+
+                    b.Property<string>("AccessCodeCode")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("SignInTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("StudentID")
+                        .HasColumnType("int");
+
+                    b.HasKey("AttendanceId");
+
+                    b.HasIndex("AccessCodeCode");
+
+                    b.HasIndex("StudentID");
+
+                    b.ToTable("AttendanceLogs");
                 });
 
             modelBuilder.Entity("StudentAttendanceTracker.Models.Course", b =>
@@ -211,12 +287,15 @@ namespace StudentAttendanceTracker.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProfessorId")
+                    b.Property<DateTime>("CourseTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("InstructorId")
                         .HasColumnType("int");
 
                     b.HasKey("CourseId");
 
-                    b.HasIndex("ProfessorId");
+                    b.HasIndex("InstructorId");
 
                     b.ToTable("Courses");
 
@@ -224,59 +303,72 @@ namespace StudentAttendanceTracker.Migrations
                         new
                         {
                             CourseId = 1,
-                            CourseName = "Introduction To C++ Programming"
+                            CourseName = "Introduction To C++ Programming",
+                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 2,
-                            CourseName = "Data Structures"
+                            CourseName = "Data Structures",
+                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 3,
-                            CourseName = "Theory of Computer Science"
+                            CourseName = "Theory of Computer Science",
+                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 4,
-                            CourseName = "Algorithims"
+                            CourseName = "Algorithms",
+                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 5,
-                            CourseName = "Web Scripting Technologies"
+                            CourseName = "Web Scripting Technologies",
+                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 6,
-                            CourseName = "Database Management"
+                            CourseName = "Database Management",
+                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 7,
-                            CourseName = "Systems Analysis and Design"
+                            CourseName = "Systems Analysis and Design",
+                            CourseTime = new DateTime(1, 1, 1, 15, 50, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 8,
-                            CourseName = "C# Programming"
+                            CourseName = "C# Programming",
+                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 9,
-                            CourseName = "Web Publishing"
+                            CourseName = "Web Publishing",
+                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Professor", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.Instructor", b =>
                 {
-                    b.Property<int>("ProfessorId")
+                    b.Property<int>("InstructorId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProfessorId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InstructorId"));
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InstructorEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -284,19 +376,15 @@ namespace StudentAttendanceTracker.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProfessorEmail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("ProfessorId");
+                    b.HasKey("InstructorId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Professors");
+                    b.ToTable("Instructors");
                 });
 
             modelBuilder.Entity("StudentAttendanceTracker.Models.QualifiedStaff", b =>
@@ -500,11 +588,33 @@ namespace StudentAttendanceTracker.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("StudentAttendanceTracker.Models.AccessCode", b =>
+                {
+                    b.HasOne("StudentAttendanceTracker.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("StudentAttendanceTracker.Models.Administrator", b =>
+                {
+                    b.HasOne("StudentAttendanceTracker.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("StudentAttendanceTracker.Models.Assistance", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.Course", "Class")
+                    b.HasOne("StudentAttendanceTracker.Models.Course", "Course")
                         .WithMany()
-                        .HasForeignKey("ClassId");
+                        .HasForeignKey("CourseId");
 
                     b.HasOne("StudentAttendanceTracker.Models.Student", "Student")
                         .WithMany()
@@ -512,21 +622,38 @@ namespace StudentAttendanceTracker.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Class");
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("StudentAttendanceTracker.Models.Attendance", b =>
+                {
+                    b.HasOne("StudentAttendanceTracker.Models.AccessCode", "AccessCode")
+                        .WithMany()
+                        .HasForeignKey("AccessCodeCode");
+
+                    b.HasOne("StudentAttendanceTracker.Models.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccessCode");
 
                     b.Navigation("Student");
                 });
 
             modelBuilder.Entity("StudentAttendanceTracker.Models.Course", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.Professor", "Professor")
-                        .WithMany("Classes")
-                        .HasForeignKey("ProfessorId");
+                    b.HasOne("StudentAttendanceTracker.Models.Instructor", "Instructor")
+                        .WithMany("Courses")
+                        .HasForeignKey("InstructorId");
 
-                    b.Navigation("Professor");
+                    b.Navigation("Instructor");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Professor", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.Instructor", b =>
                 {
                     b.HasOne("StudentAttendanceTracker.Models.User", "User")
                         .WithMany()
@@ -559,9 +686,9 @@ namespace StudentAttendanceTracker.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Professor", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.Instructor", b =>
                 {
-                    b.Navigation("Classes");
+                    b.Navigation("Courses");
                 });
 #pragma warning restore 612, 618
         }

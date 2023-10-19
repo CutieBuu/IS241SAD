@@ -6,7 +6,7 @@ namespace StudentAttendanceTracker.Models
 {
     /// <summary>
     /// This class is primarily for creating users of specific types while starting the program.
-    /// Users can either be Admin, Students, Professors, or Qualified Staff.
+    /// Users can either be Admin, Students, Instructors, or Qualified Staff.
     /// This class may be removed on production build.
     /// </summary>
     public class ConfigureIdentity
@@ -21,7 +21,9 @@ namespace StudentAttendanceTracker.Models
         {
             var roleManager = provider.GetRequiredService<RoleManager<IdentityRole>>();
             var userManager = provider.GetRequiredService<UserManager<User>>();
-            string username = "admin";
+            string email = "adminjosh@stlcc.edu";
+            string firstName = "Josh";
+            string lastName = "Cobus";
             string password = "Sesame";
             string roleName = "Admin";
 
@@ -32,13 +34,20 @@ namespace StudentAttendanceTracker.Models
                 await roleManager.CreateAsync(new IdentityRole(roleName));
             }
             // if username doesn't exist, create it and add to role
-            if (await userManager.FindByNameAsync(username) == null)
+            if (await userManager.FindByNameAsync(email) == null)
             {
-                User user = new() { UserName = username, FirstName = "Admin", LastName = "Admin" };
+                User user = new() { UserName = email, FirstName = "Admin", LastName = "Admin" };
                 var result = await userManager.CreateAsync(user, password);
                 if (result.Succeeded)
                 {
+
                     await userManager.AddToRoleAsync(user, roleName);
+                    var context = new AttendanceTrackerContext(new DbContextOptions<AttendanceTrackerContext>());
+
+                    await context.Admins.AddAsync(new() { AdministratorEmail = email, FirstName = firstName, LastName = lastName, UserId = user.Id });
+
+                    await context.SaveChangesAsync();
+                   
                 }
             }
         }
@@ -111,10 +120,10 @@ namespace StudentAttendanceTracker.Models
                             Courses = c
                         };
 
+                          
                         if (s.UserId != null)
                         {
                             await context.Students.AddAsync(s);
-
                             await context.SaveChangesAsync();
                         }
                     }
@@ -123,10 +132,10 @@ namespace StudentAttendanceTracker.Models
         }
 
         /// <summary>
-        /// Creates many Professor users.
+        /// Creates many Instructor users.
         /// </summary>
         /// <param name="provider">IServiceProvider generated from a ScopeFactory Object in Program.cs</param>
-        public static async Task CreateProfessorUsersAsync(IServiceProvider provider)
+        public static async Task CreateInstructorUsersAsync(IServiceProvider provider)
         {
             var roleManager = provider.GetRequiredService<RoleManager<IdentityRole>>();
             var userManager = provider.GetRequiredService<UserManager<User>>();
@@ -134,9 +143,9 @@ namespace StudentAttendanceTracker.Models
 
 
             // if role doesn't exist, create it
-            if (await roleManager.FindByNameAsync("Professor") == null)
+            if (await roleManager.FindByNameAsync("Instructor") == null)
             {
-                await roleManager.CreateAsync(new IdentityRole("Professor"));
+                await roleManager.CreateAsync(new IdentityRole("Instructor"));
             }
 
 
@@ -164,9 +173,9 @@ namespace StudentAttendanceTracker.Models
                     var result = await userManager.CreateAsync(users[i], passwords[i]);
                     if (result.Succeeded)
                     {
-                        await userManager.AddToRoleAsync(users[i], "Professor");
-                        await context.Professors.AddAsync(
-                            new Professor { FirstName = users[i].FirstName, LastName = users[i].LastName, ProfessorEmail = users[i].UserName!, UserId = users[i].Id, Classes = { context.Courses.First(x => x.CourseId == i + 1) } }
+                        await userManager.AddToRoleAsync(users[i], "Instructor");
+                        await context.Instructors.AddAsync(
+                            new Instructor { FirstName = users[i].FirstName, LastName = users[i].LastName, InstructorEmail = users[i].UserName!, UserId = users[i].Id, Courses = { context.Courses.First(x => x.CourseId == i + 1) } }
                             ); ;
 
                         await context.SaveChangesAsync();

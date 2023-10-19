@@ -6,35 +6,35 @@ using System.Collections.Generic;
 namespace StudentAttendanceTracker.Models
 {
     /// <summary>
-    /// Professor class that corresponds to professors table in the database
+    /// Instructor class that corresponds to Instructors table in the database
     /// </summary>
-    public class Professor
+    public class Instructor
     {
-        public Professor()
+        public Instructor()
         {
-            Classes = new HashSet<Course>();
+            Courses = new HashSet<Course>();
         }
 
         /// <summary>
-        /// Primary key for professor table
+        /// Primary key for Instructor table
         /// </summary>
-        public int ProfessorId { get; set; }
+        public int InstructorId { get; set; }
 
         /// <summary>
-        /// Professor's first name
+        /// Instructor's first name
         /// </summary>
         public string FirstName { get; set; } = string.Empty;
 
         /// <summary>
-        /// Professor's last name
+        /// Instructor's last name
         /// </summary>
         public string LastName { get; set; } = string.Empty;
 
         /// <summary>
-        /// Professor's email address 
+        /// Instructor's email address 
         /// Should be the username of the corresponding user
         /// </summary>
-        public string ProfessorEmail { get; set; } = string.Empty;
+        public string InstructorEmail { get; set; } = string.Empty;
 
         /// <summary>
         /// Foreign key of the corresponding user object
@@ -48,8 +48,8 @@ namespace StudentAttendanceTracker.Models
         public User? User { get; set; }
 
         /// <summary>
-        /// Collection of courses the professor teaches
+        /// Collection of courses the Instructor teaches
         /// </summary>
-        public virtual ICollection<Course> Classes { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }

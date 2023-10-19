@@ -17,12 +17,24 @@
       "PackagePath": "staticwebassets\\images\\background.jpg"
     },
     {
+      "Id": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\images\\home.png",
+      "PackagePath": "staticwebassets\\images\\home.png"
+    },
+    {
       "Id": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\images\\icon.webp",
       "PackagePath": "staticwebassets\\images\\icon.webp"
     },
     {
       "Id": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\images\\logo.webp",
       "PackagePath": "staticwebassets\\images\\logo.webp"
+    },
+    {
+      "Id": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\images\\report.png",
+      "PackagePath": "staticwebassets\\images\\report.png"
+    },
+    {
+      "Id": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\images\\signout.png",
+      "PackagePath": "staticwebassets\\images\\signout.png"
     },
     {
       "Id": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\wwwroot\\js\\dropdown.js",

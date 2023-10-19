@@ -76,6 +76,28 @@ namespace StudentAttendanceTracker.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Admins",
+                columns: table => new
+                {
+                    AdministratorId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AdministratorEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Admins", x => x.AdministratorId);
+                    table.ForeignKey(
+                        name: "FK_Admins_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
@@ -161,21 +183,21 @@ namespace StudentAttendanceTracker.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Professors",
+                name: "Instructors",
                 columns: table => new
                 {
-                    ProfessorId = table.Column<int>(type: "int", nullable: false)
+                    InstructorId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProfessorEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    InstructorEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Professors", x => x.ProfessorId);
+                    table.PrimaryKey("PK_Instructors", x => x.InstructorId);
                     table.ForeignKey(
-                        name: "FK_Professors_AspNetUsers_UserId",
+                        name: "FK_Instructors_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -233,16 +255,35 @@ namespace StudentAttendanceTracker.Migrations
                     CourseId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CourseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProfessorId = table.Column<int>(type: "int", nullable: true)
+                    InstructorId = table.Column<int>(type: "int", nullable: true),
+                    CourseTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Courses", x => x.CourseId);
                     table.ForeignKey(
-                        name: "FK_Courses_Professors_ProfessorId",
-                        column: x => x.ProfessorId,
-                        principalTable: "Professors",
-                        principalColumn: "ProfessorId");
+                        name: "FK_Courses_Instructors_InstructorId",
+                        column: x => x.InstructorId,
+                        principalTable: "Instructors",
+                        principalColumn: "InstructorId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AccessCodes",
+                columns: table => new
+                {
+                    Code = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CourseID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AccessCodes", x => x.Code);
+                    table.ForeignKey(
+                        name: "FK_AccessCodes_Courses_CourseID",
+                        column: x => x.CourseID,
+                        principalTable: "Courses",
+                        principalColumn: "CourseId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -252,15 +293,15 @@ namespace StudentAttendanceTracker.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ClassId = table.Column<int>(type: "int", nullable: true),
+                    CourseId = table.Column<int>(type: "int", nullable: true),
                     StudentId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Assistances", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Assistances_Courses_ClassId",
-                        column: x => x.ClassId,
+                        name: "FK_Assistances_Courses_CourseId",
+                        column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "CourseId");
                     table.ForeignKey(
@@ -295,21 +336,58 @@ namespace StudentAttendanceTracker.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "AttendanceLogs",
+                columns: table => new
+                {
+                    AttendanceId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AccessCodeCode = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    StudentID = table.Column<int>(type: "int", nullable: false),
+                    SignInTime = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AttendanceLogs", x => x.AttendanceId);
+                    table.ForeignKey(
+                        name: "FK_AttendanceLogs_AccessCodes_AccessCodeCode",
+                        column: x => x.AccessCodeCode,
+                        principalTable: "AccessCodes",
+                        principalColumn: "Code");
+                    table.ForeignKey(
+                        name: "FK_AttendanceLogs_Students_StudentID",
+                        column: x => x.StudentID,
+                        principalTable: "Students",
+                        principalColumn: "StudentId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Courses",
-                columns: new[] { "CourseId", "CourseName", "ProfessorId" },
+                columns: new[] { "CourseId", "CourseName", "CourseTime", "InstructorId" },
                 values: new object[,]
                 {
-                    { 1, "Introduction To C++ Programming", null },
-                    { 2, "Data Structures", null },
-                    { 3, "Theory of Computer Science", null },
-                    { 4, "Algorithims", null },
-                    { 5, "Web Scripting Technologies", null },
-                    { 6, "Database Management", null },
-                    { 7, "Systems Analysis and Design", null },
-                    { 8, "C# Programming", null },
-                    { 9, "Web Publishing", null }
+                    { 1, "Introduction To C++ Programming", new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified), null },
+                    { 2, "Data Structures", new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified), null },
+                    { 3, "Theory of Computer Science", new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified), null },
+                    { 4, "Algorithms", new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified), null },
+                    { 5, "Web Scripting Technologies", new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified), null },
+                    { 6, "Database Management", new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified), null },
+                    { 7, "Systems Analysis and Design", new DateTime(1, 1, 1, 15, 50, 0, 0, DateTimeKind.Unspecified), null },
+                    { 8, "C# Programming", new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified), null },
+                    { 9, "Web Publishing", new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified), null }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AccessCodes_CourseID",
+                table: "AccessCodes",
+                column: "CourseID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Admins_UserId",
+                table: "Admins",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -351,9 +429,9 @@ namespace StudentAttendanceTracker.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Assistances_ClassId",
+                name: "IX_Assistances_CourseId",
                 table: "Assistances",
-                column: "ClassId");
+                column: "CourseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Assistances_StudentId",
@@ -361,9 +439,19 @@ namespace StudentAttendanceTracker.Migrations
                 column: "StudentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Courses_ProfessorId",
+                name: "IX_AttendanceLogs_AccessCodeCode",
+                table: "AttendanceLogs",
+                column: "AccessCodeCode");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AttendanceLogs_StudentID",
+                table: "AttendanceLogs",
+                column: "StudentID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Courses_InstructorId",
                 table: "Courses",
-                column: "ProfessorId");
+                column: "InstructorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CourseStudent_StudentsStudentId",
@@ -371,8 +459,8 @@ namespace StudentAttendanceTracker.Migrations
                 column: "StudentsStudentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Professors_UserId",
-                table: "Professors",
+                name: "IX_Instructors_UserId",
+                table: "Instructors",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -389,6 +477,9 @@ namespace StudentAttendanceTracker.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Admins");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -408,6 +499,9 @@ namespace StudentAttendanceTracker.Migrations
                 name: "Assistances");
 
             migrationBuilder.DropTable(
+                name: "AttendanceLogs");
+
+            migrationBuilder.DropTable(
                 name: "CourseStudent");
 
             migrationBuilder.DropTable(
@@ -417,13 +511,16 @@ namespace StudentAttendanceTracker.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Courses");
+                name: "AccessCodes");
 
             migrationBuilder.DropTable(
                 name: "Students");
 
             migrationBuilder.DropTable(
-                name: "Professors");
+                name: "Courses");
+
+            migrationBuilder.DropTable(
+                name: "Instructors");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
