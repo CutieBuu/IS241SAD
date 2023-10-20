@@ -90,6 +90,10 @@ h1 {
     cursor: pointer;
 }
 
+.a-center {
+    text-align: center;
+}
+
 .loginform {
     font-size: 25px;
     margin-left: 5%;

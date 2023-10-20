@@ -54,24 +54,8 @@
             }
         }
     }
-    @*
-    <tr class="studenttr">
-    <td class="studenttd">Student 1</td>
-    <td class="studenttd"></td>
-    </tr>
-    <tr class="studenttr">
-    <td class="studenttd">Student 2</td><td class="studenttd">Student 7</td>
-    </tr>
-    <tr class="studenttr">
-    <td class="studenttd">Student 3</td><td class="studenttd">Student 8</td>
-    </tr>
-    <tr class="studenttr">
-    <td class="studenttd">Student 4</td><td class="studenttd">Student 9</td>
-    </tr>
-    <tr class="studenttr">
-    <td class="studenttd">Student 5</td><td class="studenttd">Student 10</td>
-    </tr>
-    *@
+
+
 </table>
 
 @if (ViewBag.AccessCode != "")
@@ -85,7 +69,7 @@ else
 {
     <div class="desc">Click "Generate Code" to generate an Access Code. Access Codes expire after 5 minutes.</div>
     <br>
-    <a asp-action="GenerateCode" asp-route-id="@Model.CourseId" asp-controller="Instructor" class="a-main">Generate Code</a>
+    <a asp-action="GenerateCode" asp-route-id="@Model.CourseId" asp-controller="Instructor" class="a-main a-center">Generate Code</a>
     
 }
 <div class="navbar">
