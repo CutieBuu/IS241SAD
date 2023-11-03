@@ -1,4 +1,4 @@
-﻿//C# and Razor code written by Zaid Abuisba
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,8 +22,8 @@ namespace StudentAttendanceTracker.Models
             var roleManager = provider.GetRequiredService<RoleManager<IdentityRole>>();
             var userManager = provider.GetRequiredService<UserManager<User>>();
             string email = "adminjosh@stlcc.edu";
-            string firstName = "Josh";
-            string lastName = "Cobus";
+            string firstName = "josh";
+            string lastName = "cobus";
             string password = "Sesame";
             string roleName = "Admin";
 
@@ -65,15 +65,15 @@ namespace StudentAttendanceTracker.Models
 
             List<User> users = new()
             {
-                new User { UserName = "RMiller@my.stlcc.edu", FirstName = "Robert", LastName = "Miller" },
-                new User { UserName = "RLogan@my.stlcc.edu", FirstName = "Randy", LastName = "Logan" },
-                new User { UserName = "EHoude@my.stlcc.edu", FirstName = "Elise", LastName = "Houde" },
-                new User { UserName = "CPeterson@my.stlcc.edu", FirstName = "Christine", LastName = "Peterson" },
-                new User { UserName = "TSharp@my.stlcc.edu", FirstName = "Tricia", LastName = "Sharp" },
-                new User { UserName = "LFlynn@my.stlcc.edu", FirstName = "Lena", LastName = "Flynn" },
-                new User { UserName = "JLau@my.stlcc.edu", FirstName = "Jas", LastName = "Lau" },
-                new User { UserName = "FLaflamme@my.stlcc.edu", FirstName = "Fatima", LastName = "Laflamme" },
-                new User { UserName = "VLapierre@my.stlcc.edu", FirstName = "Vladimir", LastName = "Lapierre" },
+                new User { UserName = "rmiller@my.stlcc.edu", FirstName = "robert", LastName = "miller" },
+                new User { UserName = "rlogan@my.stlcc.edu", FirstName = "randy", LastName = "logan" },
+                new User { UserName = "eeoude@my.stlcc.edu", FirstName = "elise", LastName = "houde" },
+                new User { UserName = "cpeterson@my.stlcc.edu", FirstName = "christine", LastName = "peterson" },
+                new User { UserName = "tsharp@my.stlcc.edu", FirstName = "tricia", LastName = "sharp" },
+                new User { UserName = "lflynn@my.stlcc.edu", FirstName = "lena", LastName = "flynn" },
+                new User { UserName = "jlau@my.stlcc.edu", FirstName = "jas", LastName = "lau" },
+                new User { UserName = "flaflamme@my.stlcc.edu", FirstName = "fatima", LastName = "laflamme" },
+                new User { UserName = "vlapierre@my.stlcc.edu", FirstName = "vladimir", LastName = "lapierre" },
             };
             List<string> passwords = new() { "RM#2023", "RL#2023", "EH#2023", "CP#2023", "TS#2023", "LF#2023", "JL#2023", "FL#2023", "VL#2023" };
 
@@ -151,15 +151,15 @@ namespace StudentAttendanceTracker.Models
 
             List<User> users = new()
             {
-                new User { UserName = "RJohnson@stlcc.edu", FirstName = "Robert", LastName = "Johnson" },
-                new User { UserName = "JSmith@stlcc.edu", FirstName = "John", LastName = "Smith" },
-                new User { UserName = "AParker@stlcc.edu", FirstName = "Amy", LastName = "Parker" },
-                new User { UserName = "JPhillips@stlcc.edu", FirstName = "Jennifer", LastName = "Phillips" },
-                new User { UserName = "BCollins@stlcc.edu", FirstName = "Benjamin", LastName = "Collins" },
-                new User { UserName = "REdwards@stlcc.edu", FirstName = "Rachel", LastName = "Edwards" },
-                new User { UserName = "TEvans@stlcc.edu", FirstName = "Thomas", LastName = "Evans" },
-                new User { UserName = "JCampbell@stlcc.edu", FirstName = "Joeseph", LastName = "Campbell" },
-                new User { UserName = "SPhillips@stlcc.edu", FirstName = "Samuel", LastName = "Phillips" },
+                new User { UserName = "rjohnson@stlcc.edu", FirstName = "robert", LastName = "johnson" },
+                new User { UserName = "jsmith@stlcc.edu", FirstName = "john", LastName = "smith" },
+                new User { UserName = "aparker@stlcc.edu", FirstName = "amy", LastName = "parker" },
+                new User { UserName = "jphillips@stlcc.edu", FirstName = "jennifer", LastName = "phillips" },
+                new User { UserName = "bcollins@stlcc.edu", FirstName = "benjamin", LastName = "collins" },
+                new User { UserName = "redwards@stlcc.edu", FirstName = "rachel", LastName = "edwards" },
+                new User { UserName = "tevans@stlcc.edu", FirstName = "thomas", LastName = "evans" },
+                new User { UserName = "jcampbell@stlcc.edu", FirstName = "joeseph", LastName = "campbell" },
+                new User { UserName = "sphillips@stlcc.edu", FirstName = "samuel", LastName = "phillips" },
             };
             List<string> passwords = new() { "RJ#2023", "JS#2023", "AP#2023", "JP#2023", "BC#2023", "RE#2023", "TE#2023", "JC#2023", "SP#2023" };
 
@@ -193,7 +193,7 @@ namespace StudentAttendanceTracker.Models
         {
             var roleManager = provider.GetRequiredService<RoleManager<IdentityRole>>();
             var userManager = provider.GetRequiredService<UserManager<User>>();
-            string username = "MTurner@stlcc.edu";
+            string username = "mturner@stlcc.edu";
             string password = "MT#2023";
             string roleName = "QualifiedStaff";
 
@@ -204,7 +204,7 @@ namespace StudentAttendanceTracker.Models
             }
             if (await userManager.FindByNameAsync(username) == null)
             {
-                User user = new() { UserName = username, FirstName = "Michael", LastName = "Turner" };
+                User user = new() { UserName = username, FirstName = "michael", LastName = "turner" };
                 var result = await userManager.CreateAsync(user, password);
                 if (result.Succeeded)
                 {

@@ -19,7 +19,7 @@ var toggle = function () {
 
 window.onload = function () {
     var cmain = $("cmain");
-    var buttons = cmain.getElementsByClassName("button-dropdown");
+    var buttons = document.getElementsByClassName("button-dropdown");
 
     // attach event handler for each button    
     for (var i = 0; i < buttons.length; i++) {

@@ -1,0 +1,51 @@
+﻿<!--html, css, & js written by Jacob Sadler-->
+
+@{
+    Layout = "_WideLayout";
+}
+@model List<Course>
+
+<a asp-action="Home" asp-area="Admin" asp-controller="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>Admin Course Portal</h1>
+<div class="desc">Here you may edit and delete courses that are currently in the database.</div>
+<br>
+<table class="admin">
+    <tr class="reporttr trheader">
+        <td class="admintd"><b>Course Name</b></td>
+        <td class="admintd"><b>Instructor</b></td>
+        <td class="admintd"><b>Meeting Time</b></td>
+        <td class="admintd admintdaction"><b>Actions</b></td>
+    </tr>
+    @{
+        for (int i = 0; i < Model.Count(); i++){
+        <tr class="reporttr @(i%2 == 0 ? "highlight" : "")">
+            <td class="admintd">@Model[i].CourseName.FirstCharToUpper()</td>
+            <td class="admintd">@Model[i].Instructor!.InstructorEmail</td>
+            <td class="admintd">@Model[i].CourseStartTime.ToString("t") - @Model[i].CourseEndTime.ToString("t")</td>
+            <td class="admintd admintdaction">
+                <a class="adminaction" asp-route-id="@Model[i].CourseId" asp-action="Edit" asp-controller="Course">Edit</a>
+                <a class="adminaction" href="@($"#modal{i}")">Delete</a>
+                <div class="modal" id="@($"modal{i}")">
+
+                    <div class="modalbackdrop"></div>
+                    <div class="modalbox">
+                        <p>Are you sure you want to delete @Model[i].CourseName?</p>
+                        <a class="adminaction" href="#">Cancel</a>
+                        <a class="adminaction" asp-route-id="@Model[i].CourseId" asp-action="Delete" asp-controller="Course">Confirm</a>
+                    </div>
+                </div>
+
+            
+            </td>
+        </tr>
+        }
+    }
+
+</table>
+<div class="navbar">
+    <a class="navbarbutton navbarbuttonwide" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton navbarbuttonwide" asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton navbarbuttonwide" asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>
+
+

@@ -263,6 +263,9 @@ namespace StudentAttendanceTracker.Migrations
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Tardy")
+                        .HasColumnType("bit");
+
                     b.HasKey("AttendanceId");
 
                     b.HasIndex("AccessCodeCode");
@@ -280,11 +283,14 @@ namespace StudentAttendanceTracker.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"));
 
+                    b.Property<DateTime>("CourseEndTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("CourseName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CourseTime")
+                    b.Property<DateTime>("CourseStartTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("InstructorId")
@@ -300,56 +306,65 @@ namespace StudentAttendanceTracker.Migrations
                         new
                         {
                             CourseId = 1,
+                            CourseEndTime = new DateTime(1, 1, 1, 10, 45, 0, 0, DateTimeKind.Unspecified),
                             CourseName = "Introduction To C++ Programming",
-                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            CourseStartTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 2,
+                            CourseEndTime = new DateTime(1, 1, 1, 10, 45, 0, 0, DateTimeKind.Unspecified),
                             CourseName = "Data Structures",
-                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            CourseStartTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 3,
+                            CourseEndTime = new DateTime(1, 1, 1, 10, 45, 0, 0, DateTimeKind.Unspecified),
                             CourseName = "Theory of Computer Science",
-                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            CourseStartTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 4,
+                            CourseEndTime = new DateTime(1, 1, 1, 10, 45, 0, 0, DateTimeKind.Unspecified),
                             CourseName = "Algorithms",
-                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            CourseStartTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 5,
+                            CourseEndTime = new DateTime(1, 1, 1, 10, 45, 0, 0, DateTimeKind.Unspecified),
                             CourseName = "Web Scripting Technologies",
-                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            CourseStartTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 6,
+                            CourseEndTime = new DateTime(1, 1, 1, 10, 45, 0, 0, DateTimeKind.Unspecified),
                             CourseName = "Database Management",
-                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            CourseStartTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 7,
+                            CourseEndTime = new DateTime(1, 1, 1, 10, 45, 0, 0, DateTimeKind.Unspecified),
                             CourseName = "Systems Analysis and Design",
-                            CourseTime = new DateTime(1, 1, 1, 15, 50, 0, 0, DateTimeKind.Unspecified)
+                            CourseStartTime = new DateTime(1, 1, 1, 15, 50, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 8,
+                            CourseEndTime = new DateTime(1, 1, 1, 10, 45, 0, 0, DateTimeKind.Unspecified),
                             CourseName = "C# Programming",
-                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            CourseStartTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             CourseId = 9,
+                            CourseEndTime = new DateTime(1, 1, 1, 10, 45, 0, 0, DateTimeKind.Unspecified),
                             CourseName = "Web Publishing",
-                            CourseTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            CourseStartTime = new DateTime(1, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

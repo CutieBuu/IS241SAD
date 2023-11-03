@@ -1,4 +1,4 @@
-# IS241SAD
+<h1>IS241SAD</h1>
 This project is a Student Attendance Tracker website made for IS241.
 <h2>Functionalities of the website:</h2>
 <ul>

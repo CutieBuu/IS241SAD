@@ -1,4 +1,4 @@
-﻿//C# and Razor code written by Zaid Abuisba
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

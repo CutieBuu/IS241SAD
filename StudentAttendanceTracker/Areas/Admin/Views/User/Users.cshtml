@@ -1,0 +1,59 @@
+﻿<!--html, css, & js written by Jacob Sadler-->
+
+@{
+    Layout = "_WideLayout";
+}
+@model UserViewModel
+
+<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>Admin User Portal</h1>
+<div class="desc">Here you may edit and delete users that are currently in the database.</div>
+<br>
+@if (TempData.Peek("ErrorMessage") != null)
+{
+    <h1 style="color:red">@TempData["ErrorMessage"]</h1>
+}
+else if (TempData.Peek("SuccessMessage") != null)
+{
+    <h1 style="color:green">@TempData["SuccessMessage"]</h1>
+}
+<table class="admin">
+        <tr class="reporttr trheader">
+            <td class="admintd"><b>First Name</b></td>
+            <td class="admintd"><b>Last Name</b></td>
+            <td class="admintd"><b>Username</b></td>
+            <td class="admintd ut"><b>User Type</b></td>
+            <td class="admintd admintdaction"><b>Actions</b></td>
+        </tr>
+    @{
+        List<User> users = Model.Users.ToList();
+        for (int i = 0; i < Model.Users.Count(); i++)
+        {
+            <tr class="reporttr @(i%2 == 0 ? "highlight" : "")">
+                <td class="admintd">@users[i].FirstName.FirstCharToUpper()</td>
+                <td class="admintd">@users[i].LastName.FirstCharToUpper()</td>
+                <td class="admintd">@users[i].UserName</td>
+                <td class="admintd ">@users[i].RoleNames[0]</td>
+                <td class="admintd admintdaction">
+                <a asp-action="Edit" asp-controller="User" asp-route-id="@users[i].Id" class="adminaction">Edit</a>
+                   
+
+                    <a class="adminaction" href="@($"#modal{i}")">Delete</a>
+                    <div class="modal" id="@($"modal{i}")">
+                        <div class="modalbackdrop"></div>
+                        <div class="modalbox">
+                            <p>Are you sure you want to delete @users[i].FirstName.FirstCharToUpper() @users[i].LastName.FirstCharToUpper()?</p>
+                            <a class="adminaction" href="#">Cancel</a> <a asp-action="Delete" asp-controller="User" asp-route-id="@users[i].Id" class="adminaction">Delete</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+<div class="navbar">
+    <a class="navbarbutton navbarbuttonwide" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton navbarbuttonwide" asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton navbarbuttonwide" asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>

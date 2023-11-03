@@ -1,4 +1,4 @@
-﻿//C# and Razor code written by Zaid Abuisba
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,7 +35,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
             string? accessCode = context.AttendanceLogs.Where(x => x.StudentID == student.StudentId)?.Include(x => x.AccessCode).FirstOrDefault(x => x.AccessCode.CourseID == id)?.Code;
             return View(new CheckInViewModel { Course = context.Courses.First(x => x.CourseId == id), AccessCode = accessCode });
         }
-
+        
 
         /// <summary>
         /// Checks a user in for the class
@@ -52,29 +52,35 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
             {
 
                 DateTime now = new(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-                DateTime courseExpiration = course.CourseTime.AddMinutes(10);
-                if (context.AttendanceLogs.Where(x => x.Code == model.AccessCode).Where(x => x.StudentID == student.StudentId).Any(x => x.SignInTime.Value.Date == DateTime.Now.Date))
+                DateTime courseExpiration = course.CourseStartTime.AddMinutes(2);
+                if (CheckedInToday(model, student))
                 {
                     TempData["ErrorMessage"] = "You have already logged your attendance for this class today.";
                 }
-                
-                else if (course.CourseTime < now && now < courseExpiration)
+                else if (course.CourseStartTime < now && now < course.CourseEndTime)
                 {
-                    context.AttendanceLogs.Add(new()
+                    
+                    Attendance attendance = new()
                     {
                         Code = model.AccessCode!,
                         AccessCode = context.AccessCodes.First(x => x.Code == model.AccessCode),
                         Student = student,
                         SignInTime = DateTime.Now,
-                        StudentID = student.StudentId
-                    });
+                        StudentID = student.StudentId,
+                        Tardy = now > courseExpiration
+                    };
+                    
+                    context.AttendanceLogs.Add(attendance);
                     context.SaveChanges();
-                    TempData["SuccessMessage"] = "Successfully Logged Attendance";
 
+                    TempData["SuccessMessage"] = "Successfully Logged Attendance" ;
+                    TempData["WarningMessage"] = attendance.Tardy ? "You have been marked as late" : string.Empty;
+                    
+                
                 }
                 else
                 {
-                    TempData["ErrorMessage"] = "Please try again at " + course.CourseTime.ToString("hh:mm tt");
+                    TempData["ErrorMessage"] = "Please try again at " + course.CourseStartTime.ToString("hh:mm tt");
                 }
             }
             else
@@ -85,6 +91,9 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
 
             return RedirectToAction("Course", "Student", new { id = model.Course.CourseId });
         }
+
+        private bool CheckedInToday(CheckInViewModel model, Models.Student student) =>
+            context.AttendanceLogs.Where(x => x.Code == model.AccessCode).Where(x => x.StudentID == student.StudentId).Any(x => x.SignInTime.Value.Date == DateTime.Now.Date);
 
         /// <summary>
         /// Gets the student object from the database that corresponds to the currently logged in user.

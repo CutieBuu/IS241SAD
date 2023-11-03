@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StudentAttendanceTracker.Models;
 using System.Security.Claims;

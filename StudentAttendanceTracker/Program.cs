@@ -1,4 +1,4 @@
-//C# and Razor code written by Zaid Abuisba
+//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
 using Microsoft.EntityFrameworkCore;
 using StudentAttendanceTracker.Models;
 using Microsoft.IdentityModel.Tokens;
@@ -37,6 +37,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Home/Index";
     options.SlidingExpiration = true;
 });
+
+
 
 builder.Services.AddRouting(options =>
 {

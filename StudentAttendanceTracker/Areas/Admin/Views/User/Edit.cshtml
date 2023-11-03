@@ -1,0 +1,72 @@
+﻿
+@model UpdateUserViewModel
+@{
+    Layout = "_Layout";
+}
+<!--html, css, & js written by Jacob Sadler-->
+
+
+<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>Update Current User</h1>
+<div class="desc">Use this form to update a current user's information. Pressing "Update User" will update the user into the database assuming all inputs are vaild.</div>
+<form class="adminform" asp-action="Edit" asp-controller="User" method="post">
+    
+    @{
+        var errors = ViewData.ModelState.Values.SelectMany(v => v.Errors);
+        errors.ToList().ForEach(x => System.Diagnostics.Debug.WriteLine(x.ErrorMessage));
+
+        if(errors.Any(x => System.Text.RegularExpressions.Regex.IsMatch(x.ErrorMessage, "name|role")))
+        {
+            <div class="formfield formfield-wide">
+                <span asp-validation-for="FirstName" style="color:red"></span>
+            </div>
+            <div class="formfield formfield-wide">
+                <label asp-for="FirstName">First Name:</label><br>
+                <input class="adminotherinput" type="text" id="fname" asp-for="FirstName" value="@Model.FirstName.FirstCharToUpper()">
+            </div>
+            <div class="formfield formfield-wide">
+                <span asp-validation-for="LastName" style="color:red"></span>
+            </div>
+            <div class="formfield formfield-wide">
+                <label asp-for="LastName">Last Name:</label><br>
+                <input class="adminotherinput" type="text" id="lname" asp-for="@Model.LastName" value="@Model.LastName.FirstCharToUpper()">
+            </div>
+        }
+        else
+        {
+            <div class="formfield">
+                <label asp-for="FirstName">First Name:</label><br>
+                <input class="adminnameinput" type="text" id="fname" asp-for="FirstName" value="@Model.FirstName.FirstCharToUpper()">
+            </div>
+            <div class="formfield">
+                <label asp-for="LastName">Last Name:</label><br>
+                <input class="adminnameinput" type="text" id="lname" asp-for="@Model.LastName" value="@Model.LastName.FirstCharToUpper()">
+            </div>
+        }
+    }
+    <div class="formfield formfield-wide">
+        <span asp-validation-for="UserName" style="color:red"></span>
+    </div>
+    <div class="formfield formfield-wide">
+        <label asp-for="UserName">Username:</label><br>
+        <input class="adminotherinput" type="text" id="uname" asp-for="UserName" value="@Model.UserName">
+    </div>
+    <div class="formfield formfield-wide">
+        <span asp-validation-for="NewPassword" style="color:red"></span>
+    </div>
+    <div class="formfield formfield-wide">
+        <label asp-for="NewPassword">Password:</label><br>
+        <input class="adminotherinput" type="text" id="pword" asp-for="NewPassword" placeholder="Leave blank to keep current password">
+    </div>
+    <div class="formfield">
+        
+        <input class="submit adminsubmit" type="submit" value="Register User">
+    </div>
+    <input type="hidden" asp-for="Id" />
+    
+</form>
+<div class="navbar">
+    <a class="navbarbutton " href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton " asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton " asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>

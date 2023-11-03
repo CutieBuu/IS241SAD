@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model CreateCourseViewModel
+<!--html, css, & js written by Jacob Sadler-->
+
+<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>Create New Course</h1>
+<div class="desc">Use this form to create new courses. Pressing "Register Course" will implement the course into the database assuming all inputs are vaild.</div>
+
+<form class="adminform" asp-action="Create" asp-controller="Course">
+    <div class="formfield">
+        <span asp-validation-for="CourseStartTime" style="color:red"></span>
+        <span asp-validation-for="CourseEndTime" style="color:red"></span>
+    </div>
+    <div class="formfield">
+        <span asp-validation-for="CourseName" style="color:red" ></span>
+        <label asp-for="CourseName">Course Name:</label><br>
+        <input asp-for="CourseName" class="adminotherinput" type="text" id="cname">
+    </div>
+    <div class="formfield formfield-wide">
+        <span asp-validation-for="InstructorEmail" style="color:red"></span>
+        <label asp-for="InstructorEmail">Username of Instructor:</label><br>
+        <input asp-for="InstructorEmail" class="adminotherinput" type="text" id="uname" >
+    </div>
+    <div class="formfield">
+        <label asp-for="CourseStartTime">Class Start Time:</label><br>
+        <input asp-for="CourseStartTime" class="adminnameinput" type="time" id="cst" >
+    </div>
+    <div class="formfield">
+        <label asp-for="CourseEndTime">Class End Time:</label><br>
+        <input asp-for="CourseEndTime" class="adminnameinput" type="time" id="cet" />
+    </div>
+    <div class="formfield">
+        <input class="submit adminsubmit" type="submit" value="Register Course">
+    </div>
+</form>
+<div class="navbar">
+    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton" asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton" asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>

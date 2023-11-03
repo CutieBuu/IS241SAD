@@ -3,8 +3,8 @@
 
 <main id="cmain">
 <a asp-action="Home" asp-controller="Student"><img src="~/images/logo.webp" class="stlcclogo"></a>
-<h1>@Model.Course.CourseName</h1>
-<div class="desc">This is your course page for @Model.Course.CourseName. Here, you can log your attendance and generate a personalized attendance report for @Model.Course.CourseName.</div>
+<h1>@Model.Course.CourseName.FirstCharToUpper()</h1>
+<div class="desc">This is your course page for @Model.Course.CourseName.FirstCharToUpper(). Here, you can log your attendance and generate a personalized attendance report for @Model.Course.CourseName.FirstCharToUpper().</div>
 <br>
 
 @if (Model.AccessCode == null)
@@ -30,6 +30,7 @@ else
         
         <div class="desc" style="color: red">@TempData["ErrorMessage"]</div>
         <div class="desc" style="color: green">@TempData["SuccessMessage"]</div>
+        <div class="desc" style="color: yellow">@TempData["WarningMessage"]</div>
         <br>
                 
         <button type="submit" class="button-main button-center button-dropdown">Check in</button>

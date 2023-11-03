@@ -1,4 +1,5 @@
-﻿namespace StudentAttendanceTracker.Models
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
+namespace StudentAttendanceTracker.Models
 {
     public class CheckInViewModel
     {

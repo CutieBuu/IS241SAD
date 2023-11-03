@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model RegisterViewModel
+<!--html, css, & js written by Jacob Sadler-->
+<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>Create New User</h1>
+<div class="desc">Use this form to create new users. Pressing "Register User" will implement the user into the database assuming all inputs are vaild.</div>
+        
+<form class="adminform" asp-action="Create" asp-controller="User" method="post">
+
+    @{
+        var errors = ViewData.ModelState.Values.SelectMany(v => v.Errors);
+        errors.ToList().ForEach(x => System.Diagnostics.Debug.WriteLine(x.ErrorMessage));
+
+        if(errors.Any(x => System.Text.RegularExpressions.Regex.IsMatch(x.ErrorMessage, "name")))
+        {
+
+            <div class="formfield formfield-wide">
+                <span asp-validation-for="FirstName" style="color:red"></span>
+            </div>
+            <div class="formfield formfield-wide">
+                <label asp-for="FirstName">First Name:</label><br>
+                <input class="adminotherinput" type="text" id="fname" asp-for="FirstName" placeholder="">
+            </div>
+            <div class="formfield formfield-wide">
+                <span asp-validation-for="LastName" style="color:red"></span>
+            </div>
+            <div class="formfield formfield-wide">
+                <label asp-for="LastName">Last Name:</label><br>
+                <input class="adminotherinput" type="text" id="lname" asp-for="LastName" placeholder="">
+            </div>
+            <div class="formfield formfield-wide">
+                <span asp-validation-for="Role" style="color:red"></span>
+            </div>
+        }
+        else
+        {
+            <div class="formfield">
+                <label asp-for="FirstName">First Name:</label><br>
+                <input class="adminnameinput" type="text" id="fname" asp-for="FirstName" placeholder="">
+            </div>
+            <div class="formfield">
+                <label asp-for="LastName">Last Name:</label><br>
+                <input class="adminnameinput" type="text" id="lname" asp-for="LastName" placeholder="">
+            </div>
+        }
+    }
+
+    
+
+    <div class="formfield formfield-wide">
+        <label asp-for="Role">User Type:</label><br>
+        <select asp-for="Role" class="usertype"  id="usertype">
+            <option value="@null">Select a User Type</option>
+            @{
+                foreach (var role in Model.Roles)
+                {
+                    <option value="@role.Name">@role.Name</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="formfield">
+        <span asp-validation-for="Username" style="color:red"></span>
+    </div>
+    <div class="formfield formfield-wide">
+        <label asp-for="Username">Username:</label><br>
+        <input class="adminotherinput" type="text" id="uname" asp-for="Username" placeholder="">
+    </div>
+    <div class="formfield">
+        <span asp-validation-for="Password" style="color:red"></span>
+    </div>
+    <div class="formfield formfield-wide">
+        <label asp-for="Password">Password:</label><br>
+        <input class="adminotherinput" type="text" id="pword" asp-for="Password" placeholder="">
+    </div>
+
+    <div class="formfield">
+        <input class="submit adminsubmit" type="submit" value="Register User">
+    </div>
+</form>
+<div class="navbar">
+    <a class="navbarbutton " href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton " asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton " asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>

@@ -1,4 +1,4 @@
-﻿//C# and Razor code written by Zaid Abuisba
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,9 @@ namespace StudentAttendanceTracker.Models
 
         public virtual Instructor? Instructor { get; set; }
 
-        public DateTime CourseTime { get; set; } = DateTime.MinValue;
+        public DateTime CourseStartTime { get; set; } = DateTime.MinValue;
+
+        public DateTime CourseEndTime { get; set; } = DateTime.MinValue;
 
         public virtual ICollection<Student>? Students { get; set; } = new List<Student>();
     }

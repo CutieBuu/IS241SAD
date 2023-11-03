@@ -1,22 +1,61 @@
 ﻿@model Administrator
+@{
+    Layout = "_Layout";
+}
 <!--html, css, & js written by Jacob Sadler-->
 
-<title>STLCC Attendance Tracker - Admin Home</title>
 
-<a asp-action="Home" asp-area="Admin" asp-controller="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
-<h1>Welcome back, @Model.FirstName</h1>
-<div class="desc">As an administrator, you have the ability to create, update, and delete user and course data.</div>
-<br>
-<a href="adminuser.html" class="a-main">Manage User Data</a>
-<a href="admincourse.html"><button class="button-main">Manage Course Data</button></a>
-<br>
-<div class="desc">Select a report type to view and download attendance reports. Will open in a new window.</div>
-<br>
-<a href="facultycoursereport.html" target="_blank"><button class="button-main">Generate Course Report</button></a>
-<a href="facultystudentreport.html" target="_blank"><button class="button-main">Generate Student Report</button></a>
-<div class="navbar">
-	<a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-	<a class="navbarbutton" asp-area="Admin" asp-action="Home" asp-controller="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
-	<a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>
+ 
+        <a asp-action="Home" asp-area="Admin" asp-controller="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
+        <h1>Welcome back, @Model.FirstName.FirstCharToUpper()</h1>
+        <div class="desc">As an administrator, you have the ability to create, update, and delete user and course data.</div>
+        <br>
+        <button class="button-main button-center button-dropdown">Manage User Data</button>
+        <div class="student-dropdown">
+            <a asp-action="Create" asp-controller="User" class="button-student a-main">Create New User</a>
+            <a asp-action="Users" asp-controller="User"  class="button-student a-main">Manage Current Users</a>
+        </div>
+    <button class="button-main button-center button-dropdown">Manage Course Data</button>
+        <div class="student-dropdown">
+            <a asp-action="Create" asp-controller="Course" class="button-student a-main">Create New Course</a>
+            <a asp-action="Course" asp-controller="Course" class="button-student a-main">Manage Current Courses</a>
+        </div>
+        <br>
+        <div class="desc">Select a report type to view and download attendance reports. Will open in a new window.</div>
+        <br>
+        <a href="facultycoursereport.html" target="_blank"><button class="button-main">Generate Course Report</button></a>
+        <a href="facultystudentreport.html" target="_blank"><button class="button-main">Generate Student Report</button></a>
+        <div class="navbar">
+            <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+            <a class="navbarbutton" asp-area="Admin" asp-action="Home" asp-controller="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
+            <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+        </div>
+   
+@section scripts{
+    <script src="~/js/dropdown.js"></script>
+    <script src="~/lib//jquery/dist/jquery.min.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

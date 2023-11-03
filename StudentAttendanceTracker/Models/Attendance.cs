@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
 
 namespace StudentAttendanceTracker.Models
 {
@@ -33,5 +33,7 @@ namespace StudentAttendanceTracker.Models
         /// The time the student signed in
         /// </summary>
         public DateTime? SignInTime { get; set; }
+
+        public bool Tardy { get; set; } = false;
     }
 }

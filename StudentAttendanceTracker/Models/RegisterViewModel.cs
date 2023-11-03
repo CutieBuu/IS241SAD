@@ -1,4 +1,6 @@
-﻿//C# and Razor code written by Zaid Abuisba
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 
 namespace StudentAttendanceTracker.Models
@@ -15,12 +17,13 @@ namespace StudentAttendanceTracker.Models
         [StringLength(255)]
         public string Username { get; set; } = string.Empty;
 
+        
         /// <summary>
         /// Password of the user
         /// </summary>
         [Required(ErrorMessage = "Please enter a password.")]
         [DataType(DataType.Password)]
-        [Compare("ConfirmPassword")]
+        //[Compare("ConfirmPassword")]
         public string Password { get; set; } = string.Empty;
 
         /// <summary>
@@ -37,12 +40,19 @@ namespace StudentAttendanceTracker.Models
 		[StringLength(255)]
 		public string LastName { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Password re-enter field to see if the password was typed in correctly twice
-        /// </summary>
-        [Required(ErrorMessage = "Please confirm your password.")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm Password")]
-        public string ConfirmPassword { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Please select a role.")]
+        public string? Role { get; set; } = null!;
+
+
+        [ValidateNever]
+        public IEnumerable<IdentityRole> Roles { get; set; } = null!;
+
+        //        /// <summary>
+        //        /// Password re-enter field to see if the password was typed in correctly twice
+        //        /// </summary>
+        //        [Required(ErrorMessage = "Please confirm your password.")]
+        //        [DataType(DataType.Password)]
+        //        [Display(Name = "Confirm Password")]
+        //        public string ConfirmPassword { get; set; } = string.Empty;
     }
 }

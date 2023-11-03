@@ -1,0 +1,143 @@
+﻿<!--html, css, & js written by Jacob Sadler-->
+@{
+    Layout = "_WideLayout";
+}
+@model EditCourseViewModel
+<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>Update Current Course</h1>
+<div class="desc">Use this page to update a current course's information and withdraw students. Pressing "Update Course Info" will update the course's info in the database assuming all inputs are vaild.</div>
+<br>
+<h1 style="color:green">@TempData["SuccessMessage"]</h1>
+<form class="adminform" asp-action="UpdateCourse" asp-controller="Course" method="post">
+    <div class="formfield">
+        <label asp-for="Course.CourseName">Course Name:</label><br>
+        <input asp-for="Course.CourseName" class="admininputsmall" type="text" id="cname" value="@Model.Course.CourseName">
+        
+    </div>
+    <div class="formfield">
+        <label asp-for="Course.Instructor!.InstructorEmail" >Instructor:</label><br>
+        <input asp-for="Course.Instructor!.InstructorEmail" class="admininputsmall" type="text" id="iname"  value="@Model.Course.Instructor!.InstructorEmail">
+        
+    </div>
+
+    <div class="formfield">
+        <label asp-for="Course.CourseStartTime">Class Start Time:</label><br>
+        <input asp-for="Course.CourseStartTime" class="admininputsmall" type="time" id="cst" placeholder="@Model.Course.CourseStartTime.ToString("t")">
+        
+    </div>
+    <div class="formfield">
+        <label asp-for="Course.CourseEndTime">Class End Time:</label><br>
+        <input asp-for="Course.CourseEndTime" class="admininputsmall" type="time" id="cet" placeholder="@Model.Course.CourseEndTime.ToString("t")">
+        
+    </div>
+    <div class="formfield">
+        <br>
+        <input class="submit adminaction" type="submit" value="Update">
+    </div>
+    <div class="formfield">
+        <span style="color:red" asp-validation-for="Course"></span>
+    </div>
+    <div class="formfield">
+        <span style="color: red" asp-validation-for="Course.Instructor!.InstructorEmail"></span>
+    </div>
+    <div class="formfield">
+        <span style="color: red" asp-validation-for="Course.CourseName"></span>
+    </div>
+    <div class="formfield">
+        <span style="color: red" asp-validation-for="Course.CourseStartTime"></span>
+    </div>
+    <div class="formfield">
+        <span style="color: red" asp-validation-for="Course.CourseEndTime"></span>
+    </div>
+
+    <input type="hidden" asp-for="Course.CourseId"/>
+</form>
+<h1 class="subheader">Current Students Enrolled in @TempData.Peek("CourseName")</h1>
+<div asp-validation-summary="ModelOnly" style="color: red" ></div>
+<table class="admin">
+    <tr class="reporttr trheader">
+        <td class="admintd"><b>First Name</b></td>
+        <td class="admintd"><b>Last Name</b></td>
+        <td class="admintd"><b>Username</b></td>
+        <td class="admintd admintdaction"><b>Actions</b></td>
+    </tr>
+    @{
+        for(int i=0; i < ViewBag.Students.Count; i++)
+        {
+            Student student = ViewBag.Students[i];
+            <tr class="reporttr @(i%2 == 0 ? "trheader" : "")">
+                <td class="admintd"><b>@student.FirstName.FirstCharToUpper()</b></td>
+                <td class="admintd"><b>@student.LastName.FirstCharToUpper()</b></td>
+                <td class="admintd"><b>@student.StudentEmail</b></td>
+                <td class="admintd admintdaction">
+                    <a class="adminaction" href="@($"#modal{i}")">Withdraw</a>
+                    <div class="modal" id="@($"modal{i}")">
+                        <div class="modalbackdrop"></div>
+                        <div class="modalbox">
+                            <p>Are you sure you want to withdraw @student.FirstName.FirstCharToUpper() @student.LastName.FirstCharToUpper()?</p>
+                            <a class="adminaction" href="#">Cancel</a><a asp-action="Withdraw" asp-route-studentId="@student.StudentId" asp-route-courseId="@Model.Course.CourseId" class="adminaction">Confirm</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    }
+ 
+    <form asp-action="AddStudent" asp-controller="Course" method="post">
+    <tr class="reporttr highlight">
+        <td class="admintd">
+            <input asp-for="Student.FirstName" class="admininputstudent" type="text" id="fname"  placeholder="First Name">
+        </td>
+        <td class="admintd">
+            <input asp-for="Student.LastName" class="admininputstudent" type="text" id="lname"  placeholder="Last Name"></td>
+        <td class="admintd">
+            <input asp-for="Student.StudentEmail" class="admininputstudent admininputstudentwide" type="text" id="uname" placeholder="Username">
+        </td>
+        <td class="admintd admintdaction">
+            <button type="submit" class="adminaction">Add Student</button>
+        </td>
+        <input type="hidden" asp-for="@Model.Course.CourseId"/>
+        <input type="hidden" asp-for="@Model.Course.CourseName" />
+        <input type ="hidden" asp-for="@Model.Course.InstructorId"/>
+        <input type="hidden" asp-for="@Model.Course.CourseStartTime "/>
+        <input type="hidden" asp-for="@Model.Course.CourseEndTime" />
+    </tr>
+
+    </form>
+    @{
+        if (!ViewData.ModelState.IsValid)
+        {
+            if (ViewData.ModelState.Keys.Contains("Student.FirstName") || ViewData.ModelState.Keys.Contains("Student.LastName") || ViewData.ModelState.Keys.Contains("Student.StudentEmail"))
+            {
+                <tr class="reporttr">
+                    <td class="admintd">
+                    <span style="color: red" asp-validation-for="Student.FirstName"></span>
+                </td>
+                <td class="admintd">
+                    <span style="color: red" asp-validation-for="Student.LastName"></span>
+                </td>
+                <td class="admintd">
+                    <span style="color: red" asp-validation-for="Student.StudentEmail"></span>
+                </td>
+                <td class="admintd admintdaction">
+                    
+                </td>
+                
+            </tr>
+            }
+            if (ViewData.ModelState.Keys.Contains("Student"))
+            {
+                <tr class="reporttr">
+                    <td class="admintd" style="text-align: center" colspan="4">
+                        <span  style="color: red" asp-validation-for="Student"></span>
+                    </td>
+                </tr>
+            }
+        }
+    }
+</table>
+<div class="navbar">
+    <a class="navbarbutton navbarbuttonwide" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton navbarbuttonwide" asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton navbarbuttonwide" asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>

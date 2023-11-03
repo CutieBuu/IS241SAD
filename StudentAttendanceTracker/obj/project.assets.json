@@ -3295,24 +3295,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vgc43\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\vgc43\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
+      "projectUniqueName": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
       "projectName": "StudentAttendanceTracker",
-      "projectPath": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
+      "projectPath": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
       "packagesPath": "C:\\Users\\vgc43\\.nuget\\packages\\",
-      "outputPath": "E:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\obj\\",
+      "outputPath": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\vgc43\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3320,7 +3315,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3377,7 +3371,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
