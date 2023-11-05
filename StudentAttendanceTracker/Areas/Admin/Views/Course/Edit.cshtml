@@ -16,7 +16,7 @@
     </div>
     <div class="formfield">
         <label asp-for="Course.Instructor!.InstructorEmail" >Instructor:</label><br>
-        <input asp-for="Course.Instructor!.InstructorEmail" class="admininputsmall" type="text" id="iname"  value="@Model.Course.Instructor!.InstructorEmail">
+        <input asp-for="Course.Instructor!.InstructorEmail" class="admininputsmall" type="text" id="iname"  value="@(Model.Course.Instructor != null ? Model.Course.Instructor.InstructorEmail : "")">
         
     </div>
 
@@ -66,9 +66,9 @@
         {
             Student student = ViewBag.Students[i];
             <tr class="reporttr @(i%2 == 0 ? "trheader" : "")">
-                <td class="admintd"><b>@student.FirstName.FirstCharToUpper()</b></td>
-                <td class="admintd"><b>@student.LastName.FirstCharToUpper()</b></td>
-                <td class="admintd"><b>@student.StudentEmail</b></td>
+                <td class="admintd">@student.FirstName.FirstCharToUpper()</td>
+                <td class="admintd">@student.LastName.FirstCharToUpper()</td>
+                <td class="admintd">@student.StudentEmail</td>
                 <td class="admintd admintdaction">
                     <a class="adminaction" href="@($"#modal{i}")">Withdraw</a>
                     <div class="modal" id="@($"modal{i}")">

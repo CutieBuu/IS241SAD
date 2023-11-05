@@ -55,6 +55,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         {
             _context.Courses.Remove(_context.Courses.First(c => c.CourseId == id));
             _context.SaveChanges();
+            TempData["SuccessMessage"] = "Course Deleted Successfully";
             return RedirectToAction("Course");
         }
 
@@ -145,8 +146,8 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
                 ModelState.AddModelError("Course.CourseStartTime", $"Instructor is already teaching a course between {tempcourse.CourseStartTime:t} and {tempcourse.CourseEndTime:t}. Please allow 15 minutes between courses.");
                
             }
-           
-            if (instructor == null)
+            
+            if (instructor == null && model.Course.Instructor.InstructorEmail != null)
             {
                 ModelState.AddModelError("Course.Instructor.InstructorEmail", "Instructor email does not exist");
 
@@ -178,7 +179,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         }
 
         [NonAction]
-        private static DateTime ChangeDate(DateTime date) => new DateTime(1, 1, 1, date.Hour, date.Minute, date.Second);
+        private static DateTime ChangeDate(DateTime date) => new(1, 1, 1, date.Hour, date.Minute, date.Second);
         //private bool ValidCourse
 
         [HttpPost]

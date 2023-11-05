@@ -8,6 +8,7 @@ namespace StudentAttendanceTracker.Models
     {
         public string Id { get; set; } = string.Empty;
 
+       
         [Required(ErrorMessage = "Username is required")]
         public string UserName { get; set; } = string.Empty;
 

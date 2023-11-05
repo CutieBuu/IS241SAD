@@ -13,7 +13,8 @@ namespace StudentAttendanceTracker.Models
         /// <summary>
         /// Email address of the user
         /// </summary>
-        [Required(ErrorMessage = "Please enter an email")]
+        
+        [Required(ErrorMessage = "Please enter a valid email address")]
         [StringLength(255)]
         public string Username { get; set; } = string.Empty;
 

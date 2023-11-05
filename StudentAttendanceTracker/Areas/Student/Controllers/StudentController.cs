@@ -74,7 +74,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
                     context.SaveChanges();
 
                     TempData["SuccessMessage"] = "Successfully Logged Attendance" ;
-                    TempData["WarningMessage"] = attendance.Tardy ? "You have been marked as late" : string.Empty;
+                    TempData["ErrorMessage"] = attendance.Tardy ? "You have been marked as late" : string.Empty;
                     
                 
                 }

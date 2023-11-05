@@ -28,9 +28,8 @@ else
 {
     <form asp-action="CheckIn" asp-controller="Student">
         
-        <div class="desc" style="color: red">@TempData["ErrorMessage"]</div>
         <div class="desc" style="color: green">@TempData["SuccessMessage"]</div>
-        <div class="desc" style="color: yellow">@TempData["WarningMessage"]</div>
+        <div class="desc" style="color: red">@TempData["ErrorMessage"]</div>
         <br>
                 
         <button type="submit" class="button-main button-center button-dropdown">Check in</button>

@@ -105,6 +105,8 @@ h1 {
     margin-bottom: 0px;
 }
 
+
+
 .desc { /**Description text**/
     font-family: sourcesansprolight, Arial, sans-serif;
     text-align: center;
@@ -363,6 +365,8 @@ a.adminaction {
     background-color: rgba(0, 0, 0, 0);
     color: black;
 }
+
+
 
     a.adminaction:hover {
         background-color: rgba(29, 29, 29, 0.164);

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StudentAttendanceTracker.Models;
-using System.Linq;
+using System.Net.Mail;
 using System.Security.Claims;
 
 namespace StudentAttendanceTracker.Areas.Admin.Controllers
@@ -73,49 +73,43 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(UpdateUserViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var user = await _userManager.FindByIdAsync(model.Id);
-                if (user is null)
-                {
-                    return NotFound();
-                }
-                user.FirstName = model.FirstName.ToLower();
-                user.LastName = model.LastName.ToLower();
-                user.UserName = model.UserName.ToLower();
-                var result = await _userManager.UpdateAsync(user);
-
-                if (result.Succeeded)
-                {
-                    if (!string.IsNullOrEmpty(model.NewPassword))
-                    {
-                        var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-                        var passwordResult = await _userManager.ResetPasswordAsync(user, token, model.NewPassword);
-                        if (!passwordResult.Succeeded)
-                        {
-                            foreach (var error in passwordResult.Errors)
-                            {
-                                ModelState.AddModelError("NewPassword", error.Description);
-                            }
-                            return View(model);
-                        }
-                    }
-
-                    var success = await UpdateOtherTables(user);
-                    if (!success)
-                    {
-                        ModelState.AddModelError("", "An error has occured");
-                        return View(model);
-                    }
-
-                    return RedirectToAction("Users");
-                }
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
+                return View(model);
             }
-            return View(model);
+            var user = await _userManager.FindByIdAsync(model.Id);
+            if (user is null)
+            {
+                return NotFound();
+            }
+            user.FirstName = model.FirstName.ToLower();
+            user.LastName = model.LastName.ToLower();
+            user.UserName = model.UserName.ToLower();
+            var result = await _userManager.UpdateAsync(user);
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "An error has occured");
+            }
+
+
+            ValidatePassword(user, model.NewPassword).Result.ToList().ForEach(e => ModelState.AddModelError("NewPassword", e.Description));
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var passwordResult = await _userManager.ResetPasswordAsync(user, token, model.NewPassword);
+
+            var success = await UpdateOtherTables(user);
+            if (!success)
+            {
+                ModelState.AddModelError("", "An error has occured");
+
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return View(model);
+            }
+
+            return RedirectToAction("Users");
         }
 
         [NonAction]
@@ -176,7 +170,8 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
                 default:
                     return false;
             }
-
+            _context.SaveChanges();
+            TempData["SuccessMessage"] = $"{user.FirstName.FirstCharToUpper()} {user.LastName.FirstCharToUpper()} was updated successfully";
             return true;
 
         }
@@ -190,70 +185,82 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         public async Task<IActionResult> Create(RegisterViewModel model)
         {
             model.Roles = _roleManager.Roles;
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                model.Username = model.Username.ToLower();
-                model.FirstName = model.FirstName.ToLower();
-                model.LastName = model.LastName.ToLower();
+                return View(model);
+            }
+            model.Username = model.Username.ToLower();
+            model.FirstName = model.FirstName.ToLower();
+            model.LastName = model.LastName.ToLower();
 
 
-                if (await _userManager.FindByNameAsync(model.Username) is not null)
-                {
-                    ModelState.AddModelError("Username", "Email already in use");
-                    ViewBag.Roles = _roleManager.Roles;
-                    return View(model);
-                }
-
-                if (await _roleManager.FindByNameAsync(model.Role) is null || model.Role == "0")
-                {
-                    ModelState.AddModelError("Role", "Invalid Role");
-                    ViewBag.Roles = _roleManager.Roles;
-                    return View(model);
-                }
-
-
-
-                User user = new()
-                {
-                    UserName = model.Username,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                };
-
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    await _userManager.AddToRoleAsync(user, model.Role);
-
-                    switch (model.Role)
-                    {
-                        case "Admin":
-                            _context.Admins.Add(new Administrator { UserId = user.Id, AdministratorEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
-                            break;
-                        case "Student":
-                            _context.Students.Add(new Models.Student { UserId = user.Id, StudentEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
-                            break;
-                        case "Instructor":
-                            _context.Instructors.Add(new Models.Instructor { UserId = user.Id, InstructorEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
-                            break;
-                        case "QualifiedStaff":
-                            _context.QualifiedStaff.Add(new Models.QualifiedStaff { UserId = user.Id, QualifiedStaffEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
-                            break;
-                        default:
-                            ModelState.AddModelError("", "An error has occured");
-                            break;
-                    }
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction("Home", "Admin");
-                }
-                else
-                {
-                    ModelState.AddModelError("Password", $"{result.Errors.First()} An error has occured please try again");
-                }
+            if (await _userManager.FindByNameAsync(model.Username) is not null)
+            {
+                ModelState.AddModelError("Username", "Email already in use");
 
 
             }
 
+            if (!ValidateEmail(model.Username))
+            {
+                ModelState.AddModelError("Username", "Invalid Email");
+            }
+
+            if (await _roleManager.FindByNameAsync(model.Role) is null || model.Role == "0")
+            {
+                ModelState.AddModelError("Role", "Invalid Role"); ;
+
+            }
+
+            User user = new()
+            {
+                UserName = model.Username,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+            };
+
+
+            foreach (var error in ValidatePassword(user, model.Password).Result)
+            {
+                ModelState.AddModelError("Password", error.Description);
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return View(model);
+            }
+
+            var result = await _userManager.CreateAsync(user, model.Password);
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, model.Role);
+
+                switch (model.Role)
+                {
+                    case "Admin":
+                        _context.Admins.Add(new Administrator { UserId = user.Id, AdministratorEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
+                        break;
+                    case "Student":
+                        _context.Students.Add(new Models.Student { UserId = user.Id, StudentEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
+                        break;
+                    case "Instructor":
+                        _context.Instructors.Add(new Instructor { UserId = user.Id, InstructorEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
+                        break;
+                    case "QualifiedStaff":
+                        _context.QualifiedStaff.Add(new QualifiedStaff { UserId = user.Id, QualifiedStaffEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
+                        break;
+                    default:
+                        ModelState.AddModelError("", "An error has occured");
+                        break;
+                }
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = $"{model.FirstName.FirstCharToUpper()} {model.LastName.FirstCharToUpper()} was created successfully";
+                return RedirectToAction("Home", "Admin");
+            }
+            else
+            {
+                ModelState.AddModelError("Password", $"{result.Errors.First()} An error has occured please try again");
+            }
             return View(model);
         }
 
@@ -329,7 +336,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
                             _context.Courses.Update(c);
                         }
                         _context.Instructors.Remove(instructor);
-                        
+
                     }
 
                     break;
@@ -344,5 +351,32 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
 
         }
+
+        [NonAction]
+        private static bool ValidateEmail(string email)
+        {
+            try
+            {
+                var address = new MailAddress(email);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private async Task<IEnumerable<IdentityError>> ValidatePassword(User user, string password)
+        {
+
+            var passwordResult = await new PasswordValidator<User>().ValidateAsync(_userManager, user, password);
+            return passwordResult.Errors;
+
+
+
+        }
     }
+
+
 }
+

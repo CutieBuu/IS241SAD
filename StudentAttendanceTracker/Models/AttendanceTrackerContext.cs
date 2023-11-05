@@ -64,6 +64,7 @@ public partial class AttendanceTrackerContext : IdentityDbContext<User>
     {
         base.OnModelCreating(modelBuilder);
 
+      
         modelBuilder.Entity<Course>().HasData(new Course { CourseId = 1, CourseName = "Introduction To C++ Programming", CourseStartTime = new DateTime(0001, 1, 1, 9, 30, 0), CourseEndTime = new DateTime(0001, 1, 1, 10, 45, 0) },
             new Course { CourseId = 2, CourseName = "Data Structures", CourseStartTime = new DateTime(0001, 1, 1, 9, 30, 0), CourseEndTime = new DateTime(0001, 1, 1, 10, 45, 0) },
             new Course { CourseId = 3, CourseName = "Theory of Computer Science", CourseStartTime = new DateTime(0001, 1, 1, 9, 30, 0), CourseEndTime = new DateTime(0001, 1, 1, 10, 45, 0) },

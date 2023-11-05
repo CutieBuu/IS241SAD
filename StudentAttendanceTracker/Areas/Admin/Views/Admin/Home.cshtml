@@ -30,7 +30,24 @@
             <a class="navbarbutton" asp-area="Admin" asp-action="Home" asp-controller="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
             <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
         </div>
-   
+
+@if (TempData.Peek("SuccessMessage") != null)
+{
+    <dialog class="popup" id="popup">
+        <div class="desc" style="color: green">@TempData["SuccessMessage"]</div>
+
+        <div style="position:relative">
+            <button  type="button" onclick="m.close()" class="submit " style="position: relative; width:24%; left: 38%"  href="#">Close</button>
+        </div>
+    </dialog>
+    <script type="text/javascript">
+
+        const m = document.querySelector("dialog");
+        m.showModal();
+
+    </script>
+    }
+
 @section scripts{
     <script src="~/js/dropdown.js"></script>
     <script src="~/lib//jquery/dist/jquery.min.js"></script>

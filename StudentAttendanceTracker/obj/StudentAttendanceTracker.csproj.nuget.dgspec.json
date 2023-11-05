@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj": {}
+    "D:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj": {}
   },
   "projects": {
-    "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj": {
+    "D:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
+        "projectUniqueName": "D:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
         "projectName": "StudentAttendanceTracker",
-        "projectPath": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
+        "projectPath": "D:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
         "packagesPath": "C:\\Users\\vgc43\\.nuget\\packages\\",
-        "outputPath": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\",
+        "outputPath": "D:\\C# Web Frameworks\\IS241SAD\\StudentAttendanceTracker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vgc43\\AppData\\Roaming\\NuGet\\NuGet.Config",

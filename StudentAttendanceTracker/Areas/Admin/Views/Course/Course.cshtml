@@ -9,6 +9,7 @@
 <h1>Admin Course Portal</h1>
 <div class="desc">Here you may edit and delete courses that are currently in the database.</div>
 <br>
+<h1 style="color:green">@TempData["SuccessMessage"]</h1>
 <table class="admin">
     <tr class="reporttr trheader">
         <td class="admintd"><b>Course Name</b></td>
@@ -20,7 +21,7 @@
         for (int i = 0; i < Model.Count(); i++){
         <tr class="reporttr @(i%2 == 0 ? "highlight" : "")">
             <td class="admintd">@Model[i].CourseName.FirstCharToUpper()</td>
-            <td class="admintd">@Model[i].Instructor!.InstructorEmail</td>
+            <td class="admintd">@(Model[i].Instructor != null ? Model[i].Instructor.InstructorEmail : "")</td>
             <td class="admintd">@Model[i].CourseStartTime.ToString("t") - @Model[i].CourseEndTime.ToString("t")</td>
             <td class="admintd admintdaction">
                 <a class="adminaction" asp-route-id="@Model[i].CourseId" asp-action="Edit" asp-controller="Course">Edit</a>
