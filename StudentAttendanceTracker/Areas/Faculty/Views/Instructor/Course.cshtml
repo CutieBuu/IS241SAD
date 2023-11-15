@@ -20,7 +20,7 @@
                 if (i % 2 == 0 && i >= studentslist.Count - 1)
                 {
                     <tr class="studenttr">
-                        <td class="studenttd">@studentslist[i].FirstName</td>
+                        <td class="studenttd">@studentslist[i].FirstName.FirstCharToUpper()</td>
 
 
                     </tr>
@@ -32,9 +32,9 @@
                 else if (i % 2 != 0 && i < studentslist.Count - 1)
                 {
                     <tr class="studenttr">
-                        <td class="studenttd">@prevstudent.FirstName</td>
+                        <td class="studenttd">@prevstudent.FirstName.FirstCharToUpper()</td>
 
-                        <td class="studenttd">@studentslist[i].FirstName</td>
+                        <td class="studenttd">@studentslist[i].FirstName.FirstCharToUpper()</td>
                     </tr>
                 }
 
@@ -46,9 +46,9 @@
             for (int i = 0; i < studentslist.Count; i+=2)
             {
                 <tr class="studenttr">
-                    <td class="studenttd">@studentslist[i].FirstName</td>
+                    <td class="studenttd">@studentslist[i].FirstName.FirstCharToUpper()</td>
            
-                    <td class="studenttd">@studentslist[i+1 >= studentslist.Count ? studentslist.Count-1 : i+1].FirstName</td>
+                    <td class="studenttd">@studentslist[i+1 >= studentslist.Count ? studentslist.Count-1 : i+1].FirstName.FirstCharToUpper()</td>
              
                 </tr>
             }
@@ -72,6 +72,9 @@ else
     <a asp-action="GenerateCode" asp-route-id="@Model.CourseId" asp-controller="Instructor" class="a-main a-center">Generate Code</a>
     
 }
+<div class="desc">Select "Generate Report" to view and download attendance reports. Will download as a .xlsx file.</div>
+<br>
+<a asp-action="Report" asp-route-id ="@Model.CourseId" asp-controller="Instructor" class="a-main a-center">Generate Report</a>
 <div class="navbar">
     <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
     <a class="navbarbutton" asp-area="Faculty" asp-action="Home" asp-controller="Instructor"><img src="~/images/home.png" class="navbaricon">Home</a>

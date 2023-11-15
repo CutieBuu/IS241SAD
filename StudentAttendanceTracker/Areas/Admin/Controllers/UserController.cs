@@ -3,7 +3,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StudentAttendanceTracker.Models;
+using StudentAttendanceTracker.Models.DatabaseModels;
+using StudentAttendanceTracker.Models.Helpers;
+using StudentAttendanceTracker.Models.Identity;
+using StudentAttendanceTracker.Models.Initialization;
+using StudentAttendanceTracker.Models.ViewModels;
 using System.Net.Mail;
 using System.Security.Claims;
 
@@ -241,7 +245,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
                         _context.Admins.Add(new Administrator { UserId = user.Id, AdministratorEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
                         break;
                     case "Student":
-                        _context.Students.Add(new Models.Student { UserId = user.Id, StudentEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
+                        _context.Students.Add(new Models.DatabaseModels.Student { UserId = user.Id, StudentEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });
                         break;
                     case "Instructor":
                         _context.Instructors.Add(new Instructor { UserId = user.Id, InstructorEmail = model.Username, FirstName = model.FirstName, LastName = model.LastName });

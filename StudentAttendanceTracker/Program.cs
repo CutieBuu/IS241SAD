@@ -1,9 +1,11 @@
 //C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
 using Microsoft.EntityFrameworkCore;
-using StudentAttendanceTracker.Models;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Identity;
 using Azure;
+using StudentAttendanceTracker.Models.Identity;
+using StudentAttendanceTracker.Models.Initialization;
+using StudentAttendanceTracker.Models.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,6 +72,7 @@ using (var scope = scopeFactory.CreateScope())
     await ConfigureIdentity.CreateInstructorUsersAsync(scope.ServiceProvider);
     await ConfigureIdentity.CreateQStaffUserAsync(scope.ServiceProvider);
 }
+
 
 
 app.MapRazorPages();

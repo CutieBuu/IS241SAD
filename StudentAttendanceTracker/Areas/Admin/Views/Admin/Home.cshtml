@@ -21,10 +21,10 @@
             <a asp-action="Course" asp-controller="Course" class="button-student a-main">Manage Current Courses</a>
         </div>
         <br>
-        <div class="desc">Select a report type to view and download attendance reports. Will open in a new window.</div>
+        <div class="desc">Select "Generate Report" to view and download attendance reports. Will download as a .xlsx file.</div>
         <br>
-        <a href="facultycoursereport.html" target="_blank"><button class="button-main">Generate Course Report</button></a>
-        <a href="facultystudentreport.html" target="_blank"><button class="button-main">Generate Student Report</button></a>
+        <a asp-action="Report" asp-controller="Admin" target=""><button class="button-main button-center">Generate Report</button></a>
+
         <div class="navbar">
             <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
             <a class="navbarbutton" asp-area="Admin" asp-action="Home" asp-controller="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>

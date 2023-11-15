@@ -1,8 +1,10 @@
 ﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 https://github.com/vgc12
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using StudentAttendanceTracker.Models;
+using StudentAttendanceTracker.Models.Identity;
+using StudentAttendanceTracker.Models.ViewModels;
 using System.Security.Claims;
+using StudentAttendanceTracker.Models.DatabaseModels;
 namespace StudentAttendanceTracker.Controllers
 {
     /// <summary>

@@ -13,7 +13,6 @@
     
     @{
         var errors = ViewData.ModelState.Values.SelectMany(v => v.Errors);
-        errors.ToList().ForEach(x => System.Diagnostics.Debug.WriteLine(x.ErrorMessage));
 
         if(errors.Any(x => System.Text.RegularExpressions.Regex.IsMatch(x.ErrorMessage, "name|role")))
         {

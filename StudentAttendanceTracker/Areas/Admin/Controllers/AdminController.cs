@@ -2,8 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using StudentAttendanceTracker.Models;
 using System.Security.Claims;
+using StudentAttendanceTracker.Models.ViewModels;
+using StudentAttendanceTracker.Models.Identity;
+using StudentAttendanceTracker.Models.Initialization;
+using StudentAttendanceTracker.Models.DatabaseModels;
+using Microsoft.IdentityModel.Tokens;
+using StudentAttendanceTracker.Models.ExcelModels;
+using StudentAttendanceTracker.Models.Helpers;
+using Microsoft.EntityFrameworkCore;
 
 namespace StudentAttendanceTracker.Areas.Admin.Controllers
 {
@@ -154,5 +161,24 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
             await _roleManager.CreateAsync(new IdentityRole(role));
             return RedirectToAction("Index");
         }
+
+
+
+        [HttpGet]
+        public ViewResult Report()
+        {
+            return View(new FacultyReportViewModel
+            {
+                Courses = _context.Courses.Include(c => c.Instructor)
+                        .Include(c => c.Students)
+                        .Where(c => c.Students.Count > 0 && c.Instructor != null)
+                        .OrderBy(c => c.CourseId)
+                        .ToList()
+            });
+
+        }
+
+
+
     }
 }

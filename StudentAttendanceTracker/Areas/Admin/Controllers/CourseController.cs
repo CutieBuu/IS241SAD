@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StudentAttendanceTracker.Models;
+using Microsoft.IdentityModel.Tokens;
+using StudentAttendanceTracker.Models.DatabaseModels;
+using StudentAttendanceTracker.Models.Initialization;
+using StudentAttendanceTracker.Models.ViewModels;
 using System.Diagnostics;
 using System.Linq;
-
 namespace StudentAttendanceTracker.Areas.Admin.Controllers
 {
     [ResponseCache(NoStore = true, Duration = 0)]
@@ -42,7 +44,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
                 .Include(c => c.Students)
                 .First(c => c.CourseId == id),
 
-                Student = new Models.Student()
+                Student = new Models.DatabaseModels.Student()
             };
             TempData["CourseName"] = model.Course.CourseName;
             ViewBag.Students = model.Course.Students!.ToList();
@@ -62,52 +64,53 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(CreateCourseViewModel model)
         {
-            if (ModelState.IsValid)
+           
+            Instructor? instructor = _context.Instructors.Include(i => i.Courses).FirstOrDefault(i => i.InstructorEmail == model.InstructorEmail);
+            if (instructor == null && !model.InstructorEmail.IsNullOrEmpty())
             {
-                Instructor? instructor = _context.Instructors.Include(i => i.Courses).FirstOrDefault(i => i.InstructorEmail == model.InstructorEmail);
-                if (instructor == null)
-                {
-                    ModelState.AddModelError("InstructorEmail", "Instructor does not exist");
-                    return View(model);
+                ModelState.AddModelError("InstructorEmail", "Instructor does not exist");
 
-                }
-                if (model.CourseStartTime >= model.CourseEndTime)
-                {
-                    ModelState.AddModelError("CourseStartTime", "Course Start Time must be before Course End Time");
-                    return View(model);
-                }
-                model.CourseStartTime = ChangeDate(model.CourseStartTime);
-                model.CourseEndTime = ChangeDate(model.CourseEndTime);
-                var tempcourse = instructor.Courses.FirstOrDefault(c => ((model.CourseStartTime >= c.CourseStartTime.AddMinutes(-14) && model.CourseStartTime <= c.CourseEndTime.AddMinutes(14))
-                                || (model.CourseEndTime >= c.CourseStartTime.AddMinutes(-14) && model.CourseEndTime <= c.CourseEndTime.AddMinutes(14))));
-                if (tempcourse != null)
-                {
-                    ModelState.AddModelError("CourseStartTime", $"Instructor is already teaching a course between {tempcourse.CourseStartTime:t} and {tempcourse.CourseEndTime:t}");
-                    return View(model);
-                }
-
-                Course course = new()
-                {
-                    InstructorId = instructor.InstructorId,
-                    CourseName = model.CourseName!,
-                    CourseStartTime = ChangeDate(model.CourseStartTime),
-                    CourseEndTime = ChangeDate(model.CourseEndTime)
-                };
-
-                tempcourse = _context.Courses.FirstOrDefault(c => c.InstructorId == course.InstructorId && c.CourseEndTime == course.CourseEndTime && course.CourseStartTime == c.CourseStartTime && course.CourseName == c.CourseName);
-
-                if (tempcourse == null)
-                {
-                    _context.Courses.Add(course);
-                    _context.SaveChanges();
-                }
-
-
-
-                return RedirectToAction("Edit", "Course", new { id = tempcourse == null ? _context.Courses.First(c => c.CourseId == _context.Courses.Count()).CourseId : tempcourse.CourseId });
 
             }
-            return View(model);
+            if (model.CourseStartTime >= model.CourseEndTime)
+            {
+                ModelState.AddModelError("CourseStartTime", "Course Start Time must be before Course End Time");
+
+            }
+            model.CourseStartTime = ChangeDate(model.CourseStartTime);
+            model.CourseEndTime = ChangeDate(model.CourseEndTime);
+            var tempcourse = instructor?.Courses.FirstOrDefault(c => ((model.CourseStartTime >= c.CourseStartTime.AddMinutes(-14) && model.CourseStartTime <= c.CourseEndTime.AddMinutes(14))
+                            || (model.CourseEndTime >= c.CourseStartTime.AddMinutes(-14) && model.CourseEndTime <= c.CourseEndTime.AddMinutes(14))));
+            if (tempcourse != null)
+            {
+                ModelState.AddModelError("CourseStartTime", $"Instructor is already teaching a course between {tempcourse.CourseStartTime:t} and {tempcourse.CourseEndTime:t}");
+
+            }
+            //fix here
+            if (model.CourseName == null)
+            {
+                ModelState.AddModelError("CourseName", "Must enter a course name");
+            }
+            if (ModelState.ErrorCount > 0)
+            {
+                return View(model);
+            }
+            
+            Course course = new()
+            {
+                InstructorId = instructor != null ? instructor.InstructorId : null,
+                CourseName = model.CourseName!,
+                CourseStartTime = ChangeDate(model.CourseStartTime),
+                CourseEndTime = ChangeDate(model.CourseEndTime)
+            };
+
+            _context.Courses.Add(course);
+            _context.SaveChanges();
+
+
+
+
+            return RedirectToAction("Edit", "Course", new { id = tempcourse == null ? _context.Courses.First(c => c.CourseId == _context.Courses.Count()).CourseId : tempcourse.CourseId });
         }
 
         [HttpPost]
@@ -190,8 +193,8 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
             ViewBag.Students = model.Course.Students!.ToList();
             if (model.Student.StudentEmail != null && model.Student.FirstName != null && model.Student.LastName != null)
             {
-                Models.Student student = _context.Students.Include(s => s.Courses).FirstOrDefault(s => s.FirstName == model.Student.FirstName && s.LastName == model.Student.LastName && s.StudentEmail == model.Student.StudentEmail)
-                    ?? new Models.Student();
+                Models.DatabaseModels.Student student = _context.Students.Include(s => s.Courses).FirstOrDefault(s => s.FirstName == model.Student.FirstName && s.LastName == model.Student.LastName && s.StudentEmail == model.Student.StudentEmail)
+                    ?? new Models.DatabaseModels.Student();
                 if (student.StudentId == 0 || student.Courses == null)
                 {
                     ModelState.AddModelError("Student", $"\"{model.Student.FirstName} {model.Student.LastName} {model.Student.StudentEmail}\" does not exist");

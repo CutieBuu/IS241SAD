@@ -39,12 +39,8 @@ else
         
 }
 
-<button class="button-main button-center button-dropdown">Generate Report</button>
-<div class="student-dropdown">
-    <button class="button-student">Weekly Report</button>
-    <button class="button-student">Monthly Report</button>
-    <button class="button-student">Semester Report</button>
-</div>
+    <a asp-action="Report" asp-route-id="@Model.Course.CourseId" class="a-center a-main">Generate Report</a>
+
 <div class="navbar">
     <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
     <a class="navbarbutton" asp-action="Home" asp-controller="Student"><img src="~/images/home.png" class="navbaricon">Home</a>

@@ -77,11 +77,36 @@ div.container-main:has(.navbar) {
         cursor: pointer;
     }
 
+.smalldesc {
+    font-family: sourcesansprolight, Arial, sans-serif;
+    text-align: left;
+    font-size: 16px;
+    padding-top: 0px;
+}
+
+.reportcheckbox {
+    padding-top: 200px;
+    margin-left: 20px;
+}
+
+.checkbox {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+    font-size: 16px;
+}
+
+.formfield-checkbox {
+    padding-bottom: 10px;
+}
+
+
 .container-accesscode {
     background-color: rgb(239, 237, 253);
     font-size: 30px;
     margin-top: 20px;
     margin-left: 20%;
+    margin-bottom: 30px;
     width: 60%;
     height: 60px;
     line-height: 50px;
@@ -89,6 +114,7 @@ div.container-main:has(.navbar) {
     box-sizing: border-box;
     border: 4px solid rgb(0, 58, 112);
 }
+
 
     .container-accesscode:hover {
         background-color: rgb(224, 220, 252);
@@ -104,6 +130,8 @@ h1 {
     font-size: 30px;
     margin-bottom: 0px;
 }
+
+
 
 
 
@@ -226,6 +254,16 @@ dialog { /** Modal/Popup boxes**/
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
 }
+
+.formfield-dropdown {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 430px;
+    height: 49px;
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+}
+
 
 .button-student { /**Student dropdown menu**/
     text-align: center;
@@ -388,7 +426,7 @@ a.adminaction {
     border-radius: 6px;
     margin-top: 10px;
     margin-bottom: 20px;
-    width: 426px;
+    width: 424px;
     height: 45px;
 }
 
@@ -538,6 +576,10 @@ td.absent {
 @media (max-width: 630px) { /**Resizing for mobile**/
     div.container-main {
         width: 250px;
+    }
+
+    .formfield-dropdown {
+        width: 206px;
     }
 
     .stlcclogo {

@@ -3,12 +3,19 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StudentAttendanceTracker.Models;
 using System.Diagnostics;
 using System.Security.Claims;
 using System.Linq;
 using System;
 using System.Security.Cryptography;
+using StudentAttendanceTracker.Models.Identity;
+using StudentAttendanceTracker.Models.Helpers;
+using StudentAttendanceTracker.Models.DatabaseModels;
+using StudentAttendanceTracker.Models.Initialization;
+using StudentAttendanceTracker.Models.ViewModels;
+using StudentAttendanceTracker.Models.ExcelModels;
+using Microsoft.IdentityModel.Tokens;
+using MethodTimer;
 
 namespace StudentAttendanceTracker.Areas.Student.Controllers
 {
@@ -70,16 +77,29 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
         /// <returns>The course action</returns>
         public IActionResult GenerateCode(int id)
         {
-            Random random = new();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            
             string? accessCode = context.AccessCodes.FirstOrDefault() != null ? context.AccessCodes.FirstOrDefault(a => a.CourseID == id)?.Code : null;
             if (accessCode is null)
             {
-                accessCode = new(Enumerable.Repeat(chars, 6).Select(s => s[random.Next(s.Length)]).ToArray());
+                accessCode = HelperMethods.GetRandomCharacters(6);
                 context.AccessCodes.Add(new AccessCode { Code = accessCode, CourseID = id }); //change time to specified time
             }
             context.SaveChanges();
-            return RedirectToAction("Course", "Instructor", new { id = id });
+            return RedirectToAction("Course", "Instructor", new { id });
         }
+
+        [HttpGet]
+        public IActionResult Report(int id)
+        {
+            return View(new FacultyReportViewModel { CourseId = id });
+
+        }
+
+        
+     
+
+   
+
+    
     }
 }

@@ -9,28 +9,52 @@
 <div class="desc">Use this form to create new courses. Pressing "Register Course" will implement the course into the database assuming all inputs are vaild.</div>
 
 <form class="adminform" asp-action="Create" asp-controller="Course">
-    <div class="formfield">
-        <span asp-validation-for="CourseStartTime" style="color:red"></span>
-        <span asp-validation-for="CourseEndTime" style="color:red"></span>
-    </div>
+
     <div class="formfield">
         <span asp-validation-for="CourseName" style="color:red" ></span>
+    </div>
+    <div class="formfield">
         <label asp-for="CourseName">Course Name:</label><br>
         <input asp-for="CourseName" class="adminotherinput" type="text" id="cname">
     </div>
     <div class="formfield formfield-wide">
         <span asp-validation-for="InstructorEmail" style="color:red"></span>
+    </div>
+    <div class="formfield formfield-wide">
         <label asp-for="InstructorEmail">Username of Instructor:</label><br>
         <input asp-for="InstructorEmail" class="adminotherinput" type="text" id="uname" >
     </div>
-    <div class="formfield">
-        <label asp-for="CourseStartTime">Class Start Time:</label><br>
-        <input asp-for="CourseStartTime" class="adminnameinput" type="time" id="cst" >
-    </div>
-    <div class="formfield">
-        <label asp-for="CourseEndTime">Class End Time:</label><br>
-        <input asp-for="CourseEndTime" class="adminnameinput" type="time" id="cet" />
-    </div>
+    @{
+    var errors = ViewData.ModelState.Values.SelectMany(v => v.Errors);
+
+    if(errors.Any(x => System.Text.RegularExpressions.Regex.IsMatch(x.ErrorMessage, "Time"))){
+         <div class="formfield formfield-wide">
+            <span style="color: red" asp-validation-for="CourseStartTime"></span>
+         </div>
+            <div class="formfield formfield-wide">
+                <span style="color:red" asp-validation-for="CourseEndTime"></span>
+            </div>
+        <div class="formfield formfield-wide">
+            <label asp-for="CourseStartTime">Class Start Time:</label><br>
+            <input asp-for="CourseStartTime" class="adminotherinput" type="time" id="cst" >
+        </div>
+        <div class="formfield">
+            <label asp-for="CourseEndTime">Class End Time:</label><br>
+            <input asp-for="CourseEndTime" class="adminotherinput" type="time" id="cet" />
+            </div>
+        }
+        else
+        {
+            <div class="formfield">
+                <label asp-for="CourseStartTime" >Class Start Time:</label><br>
+                <input asp-for="CourseStartTime" class="adminnameinput" type="time" id="cst">
+            </div>
+            <div class="formfield">
+                <label asp-for="CourseEndTime">Class End Time:</label><br>
+                <input asp-for="CourseEndTime" class="adminnameinput" type="time" id="cet" />
+            </div>
+        }
+    }
     <div class="formfield">
         <input class="submit adminsubmit" type="submit" value="Register Course">
     </div>

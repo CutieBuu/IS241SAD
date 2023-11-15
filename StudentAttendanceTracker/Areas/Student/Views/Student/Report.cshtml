@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "STLCC Attendance Tracker - Student Report";
+}
+@model StudentReportViewModel
+
+<a asp-action="Home" asp-area="Student" asp-controller="Student"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<h1>Generate Attendance Report</h1>
+<div class="desc">Fill out the  form to select what data you're looking for. Clicking "Generate Report" will download the report as a .xlsx file.</div>
+<form class="adminform" asp-action="Report" asp-controller="Student" method="post">
+    @if(ViewData.ModelState.ErrorCount > 0)
+    {
+        <div class="formfield formfield-wide">
+            <span asp-validation-for="StartDate" style="color: red"></span>
+        </div>
+     
+    }
+    <div class="formfield">
+        <label for="rsd">Report Start Date:</label><br>
+        <input class="adminnameinput" type="date" id="rsd" asp-for="StartDate" placeholder="(mm/dd/yy)">
+    </div>
+    <div class="formfield">
+        <label for="red">Report End Date:</label><br>
+        <input class="adminnameinput" type="date" id="red" asp-for="EndDate" placeholder="(mm/dd/yy)">
+    </div>
+    <div class="formfield">
+        <input class="submit adminsubmit" type="submit" value="Generate Report">
+    </div>
+    <input type="hidden" asp-for="Course.CourseId" />
+    <input type="hidden" asp-for="Student.StudentId" />
+</form>
+<div class="navbar">
+    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+    <a class="navbarbutton" asp-action="Home" asp-controller="Student"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+</div>
