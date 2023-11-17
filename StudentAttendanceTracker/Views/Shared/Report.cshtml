@@ -1,4 +1,4 @@
-﻿@model FacultyReportViewModel
+﻿@model ReportViewModel
 @{
     ViewData["Title"] = $"STLCC Attendance Tracker - {Model.Caller} Report";
 }
@@ -6,13 +6,13 @@
 <a asp-action="Home" asp-controller="@Model.Caller"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>Generate Student Report</h1>
 <div class="desc">Fill out the  form to select what data you're looking for. Clicking "Generate Report" will download the report as a .xlsx file.</div>
-<form asp-action="Report" asp-area="" asp-route-userType="@Model.Caller" asp-controller="Report" method="post">
+<form class="adminform" asp-action="Report" asp-area="" asp-controller="Report" method="post">
     @{
         if (Model.Caller != "Student" && Model.Caller != "Instructor")
         {
-            <div class="formfield formfield-wide">
-                <span asp-validation-for="CourseId" style="color: red"></span>
-            </div>
+          
+                <span asp-validation-for="CourseId" class="validation-message"></span>
+          
             <div class="formfield formfield-wide">
                 <label asp-for="CourseId">Course Name:</label><br>
                 <select class="formfield-dropdown" id="cname" asp-for="CourseId" >
@@ -26,34 +26,46 @@
 
             <br />
         }
+        else
+        {
+            <input type="hidden" asp-for="CourseId" />
+        
+        }
     }
-    @if(Model.Caller != "Student"){}
-    <div class="formfield formfield-wide">
-        <span asp-validation-for="StudentUsernames" style="color: red"></span>
-    </div>
-    <div class="formfield formfield-wide">
-        <label asp-for="StudentUsernames">Student Username(s):</label><br>
+    @if (Model.Caller != "Student")
+    {
+        <div class="formfield formfield-wide">
+            <span asp-validation-for="StudentUsernames" class="validation-message"></span>
+        </div>
+        <div class="formfield formfield-wide">
+            <label asp-for="StudentUsernames">Student Username(s):</label><br>
         <div class="smalldesc">To select multiple students, insert a comma and space between each one (student1, student2, ...)</div>
         <input class="adminotherinput" type="text" id="suser" asp-for="StudentUsernames" placeholder="(Leave blank to select all students)">
     </div>
     }
-    <div class="formfield formfield-wide">
-        <span asp-validation-for="StartDate" style="color: red"></span>
-    </div>
+    else
+    {
+        <input type="hidden" asp-for="StudentUsernames" />
+    }
+
+   
+    
+    <span asp-validation-for="StartDate" class="validation-message "></span>
     <div class="formfield">
-        <label asp-for="StartDate">Report Start Date:</label><br>
+        <label for="rsd">Report Start Date:</label><br>
         <input class="adminnameinput" type="date" id="rsd" asp-for="StartDate" placeholder="(mm/dd/yy)">
     </div>
     <div class="formfield">
-        <label asp-for="EndDate">Report End Date:</label><br>
+        <label for="red">Report End Date:</label><br>
         <input class="adminnameinput" type="date" id="red" asp-for="EndDate" placeholder="(mm/dd/yy)">
     </div>
     <div class="formfield">
         <input class="submit adminsubmit" type="submit" value="Generate Report">
     </div>
+    <input type="hidden" asp-for="Caller" />
 </form> 
 <div class="navbar">
     <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton" asp-area="@(Model.Caller == "Admin"? Model.Caller : "Faculty")" asp-action="Home" asp-controller="@Model.Caller"><img src="~/images/home.png" class="navbaricon">Home</a>
+    <a class="navbarbutton" asp-area="@(Model.Caller == "Admin" || Model.Caller == "Student" ? Model.Caller : "Faculty")" asp-action="Home" asp-controller="@Model.Caller"><img src="~/images/home.png" class="navbaricon">Home</a>
     <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
 </div>

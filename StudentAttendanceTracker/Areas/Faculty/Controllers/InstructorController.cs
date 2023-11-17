@@ -62,9 +62,10 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
         /// <returns></returns>
         public IActionResult Course(int id)
         {
-
+            
             Instructor Instructor = context.Instructors.First(p => p.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier));
             Course course = context.Courses.Include(c=> c.Students).Where(c => c.InstructorId == Instructor.InstructorId).First(c => c.CourseId == id);
+         
             AccessCode? history = context.AccessCodes.FirstOrDefault() != null ? context.AccessCodes.FirstOrDefault(a => a.CourseID == id) : null;
             ViewBag.AccessCode = history != null ? history.Code : "";
             return View(course);
@@ -91,7 +92,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
         [HttpGet]
         public IActionResult Report(int id)
         {
-            return View("~/Views/Shared/Report.cshtml",new FacultyReportViewModel { CourseId = id, Caller = "Instructor" });
+            return View("~/Views/Shared/Report.cshtml",new ReportViewModel { CourseId = id, Caller = "Instructor" });
 
         }
 

@@ -97,57 +97,12 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
         }
 
         [HttpGet]
-        public ViewResult Report(int id) => View(new StudentReportViewModel { Student = GetStudent(), Course = context.Courses.Find(id) });
+        public ViewResult Report(int id) => View("~/Views/Shared/Report.cshtml",new ReportViewModel {
+            Caller = "Student",
+            StudentUsernames = GetStudent().StudentEmail,
+            CourseId = id});
 
-        [HttpPost]
-        public async Task<IActionResult> Report(StudentReportViewModel model)
-        {
-            if(model.StartDate > model.EndDate)
-            {
-                ModelState.AddModelError("StartDate", "Start Date must be before End Date");
-                return View(model);
-            }
-            model.Student = GetStudent();
-            model.Course = await context.Courses.FindAsync(model.Course.CourseId);
-            model.AttendanceLogs = context.AttendanceLogs.Include(log => log.AccessCode).Where(a => a.StudentID == model.Student.StudentId && a.AccessCode.CourseID == model.Course.CourseId).ToList();
-
-
-
-            List<StudentsInCourse> x = new List<StudentsInCourse>
-            {
-                new StudentsInCourse{}
-            };
-
-
-            StudentsInCourse reportModel =
-            new()
-            {
-                StartDate = model.StartDate,
-                EndDate = model.EndDate,
-                Course = model.Course,
-                StudentAttendanceLogs = new List<StudentAttendance>
-                {
-                    new StudentAttendance
-                    {
-                        Student = model.Student,
-                        AttendanceLogs = model.AttendanceLogs
-                    }
-                }
-
-
-            };
-
-
-            ExcelHandler handler = new();
-            var result = await handler.CreateExcelFileAsync(reportModel);
-
-
-            byte[] fileBytes = await System.IO.File.ReadAllBytesAsync(@$"./TemporaryReports/{result}.xlsx");
-            string fileName = $"{model.Student.FirstName.FirstCharToUpper()}_{model.Student.LastName.FirstCharToUpper()}_Report.xlsx";
-            System.IO.File.Delete(@$"./TemporaryReports/{result}.xlsx");
-            ModelState.Clear();
-            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
-        }
+    
 
         private bool CheckedInToday(CheckInViewModel model, Models.DatabaseModels.Student student) =>
             context.AttendanceLogs.Where(x => x.Code == model.AccessCode).Where(x => x.StudentID == student.StudentId).Any(x => x.SignInTime.Value.Date == DateTime.Now.Date);

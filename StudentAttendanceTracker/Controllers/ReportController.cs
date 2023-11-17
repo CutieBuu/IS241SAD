@@ -13,7 +13,6 @@ using Microsoft.IdentityModel.Tokens;
 namespace StudentAttendanceTracker.Controllers
 {
     [ResponseCache(NoStore = true, Duration = 0)]
-    [Authorize(Roles = "Instructor,Admin,QualifiedStaff")]
 
 
     public class ReportController : Controller
@@ -23,91 +22,53 @@ namespace StudentAttendanceTracker.Controllers
         public ReportController(AttendanceTrackerContext ctx) => _context = ctx;
 
         [HttpPost]
-        public async Task<ActionResult> Report(FacultyReportViewModel model, string userType = "")
+        public async Task<ActionResult> Report(ReportViewModel model)
         {
-          
-            if (model.CourseId == 0)
-            {
-                //Change this
-                model.Courses = _context.Courses.Include(c => c.Instructor)
-                        .Include(c => c.Students)
-                        .Where(c => c.Students.Count > 0 && c.Instructor != null)
-                        .OrderBy(c => c.CourseId)
-                        .ToList();
-                ModelState.AddModelError("CourseId", "Please select a course");
-                return userType switch
-                {
-                    "Instructor" => View("~/Areas/Faculty/Views/Instructor/Report.cshtml", model),
-                    "QualifiedStaff" => View("~/Areas/Faculty/Views/QualifiedStaff/Report.cshtml", model),
-                    "Admin" => View("~/Areas/Admin/Views/Admin/Report.cshtml", model),
-                    _ => RedirectToAction("Index", "Home"),
-                };
-            }
+
 
             if (model.StartDate > model.EndDate)
             {
-                //Change this
+                ModelState.AddModelError("StartDate", "Start date must be before end date");
+            }
+
+            List<Student> students = new();
+            var usernames = model.StudentUsernames?.Replace(" ", "").Split(",");
+            var course = _context.Courses.Include(c => c.Students).Include(c => c.Instructor).Include(c => c.Instructor.User).First(c => c.CourseId == model.CourseId);
+            var id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if(course.Instructor.UserId != id && model.Caller == "Instructor")
+            {
+                TempData["ErrorMessage"] = $"You are not the instructor for {course.CourseName}";
+                return RedirectToAction("Home", "Instructor", new {Area = "Faculty"});
+            }
+            
+            if(course.Students.Any(s => s.UserId == id) == false )
+            {
+                TempData["ErrorMessage"] = $"You are not enrolled in {course.CourseName}";
+                return RedirectToAction("Home", "Student", new { Area = "Student" });
+            }
+
+            if (model.Caller == "Student")
+            {
+                students.Add(_context.Students.First(s => s.StudentEmail == usernames[0]));
+            }
+            else
+            {
+                students = ValidateUsernames(model, students, usernames, course);
+                if (students.Count == 0)
+                {
+                    ModelState.AddModelError("StudentUsernames", "No students found with those usernames");
+                }
+            }
+
+            if(ModelState.IsValid == false)
+            {
                 model.Courses = _context.Courses.Include(c => c.Instructor)
                         .Include(c => c.Students)
                         .Where(c => c.Students.Count > 0 && c.Instructor != null)
                         .OrderBy(c => c.CourseId)
                         .ToList();
-                ModelState.AddModelError("StartDate", "Start date must be before end date");
-                return userType switch
-                {
-                    "Instructor" => View("~/Areas/Faculty/Views/Instructor/Report.cshtml", model),
-                    "QualifiedStaff" => View("~/Areas/Faculty/Views/QualifiedStaff/Report.cshtml", model),
-                    "Admin" => View("~/Areas/Admin/Views/Admin/Report.cshtml", model),
-                    _ => RedirectToAction("Index", "Home"),
-                };
-
+                return View("~/Views/Shared/Report.cshtml", model);
             }
-            
-            List<Student> students = new();
-            var course = _context.Courses.Include(c => c.Students).First(c => c.CourseId == model.CourseId);
-
-            if (!model.StudentUsernames.IsNullOrEmpty())
-            {
-
-                var usernames = model.StudentUsernames.Replace(" ", "").Split(",");
-                students = course.Students.Where(s => usernames.Contains(s.StudentEmail) && course.Students.Contains(s)).OrderBy(s => s.LastName).ToList();
-                if (students.Count == 0)
-                {
-                    //change this
-                    model.Courses = userType == "Instructor" ? null : _context.Courses.Include(c => c.Instructor)
-                       .Include(c => c.Students)
-                       .Where(c => c.Students.Count > 0 && c.Instructor != null)
-                       .OrderBy(c => c.CourseId)
-                       .ToList();
-                    ModelState.AddModelError("StudentUsernames", "No students found with the specified usernames");
-
-                    
-                }
-
-
-                foreach (string username in usernames)
-                {
-                    if (!students.Any(s => s.StudentEmail == username))
-                    {
-                        //Change this
-                        model.Courses = model.Courses == null && userType == "Instructor" ? null : _context.Courses.Include(c => c.Instructor)
-                       .Include(c => c.Students)
-                       .Where(c => c.Students.Count > 0 && c.Instructor != null)
-                       .OrderBy(c => c.CourseId)
-                       .ToList();
-                        ModelState.AddModelError("StudentUsernames", $"No student found with the username {username}");
-                        
-                    }
-                }
-            }
-            else
-            {
-                students = course.Students.OrderBy(s => s.LastName).ToList();
-            }
-
-         
-
-
 
             StudentsInCourse reportModel = new()
             {
@@ -119,7 +80,7 @@ namespace StudentAttendanceTracker.Controllers
             };
 
 
-            foreach (Models.DatabaseModels.Student s in students)
+            foreach (Student s in students)
             {
                 reportModel.StudentAttendanceLogs.Add(new StudentAttendance
                 {
@@ -133,10 +94,32 @@ namespace StudentAttendanceTracker.Controllers
             var result = await handler.CreateExcelFileAsync(reportModel);
 
             byte[] fileBytes = await System.IO.File.ReadAllBytesAsync(@$"./TemporaryReports/{result}.xlsx");
-            string fileName = $"{course.CourseName}_Report.xlsx";
+            string fileName;
+            if (model.Caller != "Student")
+            {
+                fileName = $"{course.CourseName.Replace(" ","_")}_Report.xlsx";
+            }
+            else
+            {
+                fileName = $"{students[0].FirstName.FirstCharToUpper()}_{students[0].LastName.FirstCharToUpper()}_{course.CourseName.Replace(" ", "_")}_Report.xlsx";
+            }
             System.IO.File.Delete(@$"./TemporaryReports/{result}.xlsx");
             ModelState.Clear();
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+
+        private static List<Student> ValidateUsernames(ReportViewModel model, List<Student> students, string[] usernames, Course course)
+        {
+            if (model.StudentUsernames.IsNullOrEmpty())
+            {
+                students = course.Students.OrderBy(s => s.LastName).ToList();
+            }
+            else
+            {
+                students = course.Students.Where(s => usernames.Contains(s.StudentEmail) && course.Students.Contains(s)).OrderBy(s => s.LastName).ToList();
+            }
+
+            return students;
         }
     }
 }

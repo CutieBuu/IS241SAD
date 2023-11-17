@@ -7,7 +7,7 @@ namespace StudentAttendanceTracker.Controllers
 {
     public class ValidationController : Controller
     {
-        private AttendanceTrackerContext _context;
+        private readonly AttendanceTrackerContext _context;
 
         public ValidationController(AttendanceTrackerContext ctx) => _context = ctx;
 
@@ -20,7 +20,9 @@ namespace StudentAttendanceTracker.Controllers
 
             if (DateTime.TryParse(StartDate, out DateTime resultBefore) && DateTime.TryParse(EndDate, out DateTime resultAfter))
             {
-                return resultBefore.Date < resultAfter.Date ? Json(true) : Json("Start date must be before end date");
+                var d1 = new DateTime(resultBefore.Year, resultBefore.Month, resultBefore.Day, resultBefore.Hour, resultBefore.Minute, 0);
+                var d2 = new DateTime(resultAfter.Year, resultAfter.Month, resultAfter.Day,resultAfter.Hour, resultAfter.Minute, 0);
+                return d1 < d2 ? Json(true) : Json("Start date must be before end date");
             }
             return Json("Invalid date format must be (m/d/yyyy).");
             

@@ -100,6 +100,15 @@ div.container-main:has(.navbar) {
     padding-bottom: 10px;
 }
 
+.validation-message {
+    color: red;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    width: 424px;
+    height: auto;
+    padding-left: 10px;
+    text-align:center;
+}
 
 .container-accesscode {
     background-color: rgb(239, 237, 253);

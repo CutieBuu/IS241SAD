@@ -6,10 +6,6 @@ using System.Security.Claims;
 using StudentAttendanceTracker.Models.ViewModels;
 using StudentAttendanceTracker.Models.Identity;
 using StudentAttendanceTracker.Models.Initialization;
-using StudentAttendanceTracker.Models.DatabaseModels;
-using Microsoft.IdentityModel.Tokens;
-using StudentAttendanceTracker.Models.ExcelModels;
-using StudentAttendanceTracker.Models.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace StudentAttendanceTracker.Areas.Admin.Controllers
@@ -167,7 +163,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         [HttpGet]
         public ViewResult Report()
         {
-            return View("~/Views/Shared/Report.cshtml", new FacultyReportViewModel
+            return View("~/Views/Shared/Report.cshtml", new ReportViewModel
             {
                 Courses = _context.Courses.Include(c => c.Instructor)
                         .Include(c => c.Students)

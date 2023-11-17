@@ -7,8 +7,11 @@
 
 
 <a asp-action="Home" asp-area="Student" asp-controller="Student" ><img src="~/images/logo.webp" class="stlcclogo"></a>
+
 <h1>Welcome back, @Model.FirstName.FirstCharToUpper()</h1>
+
 <div class="desc">Select a course to check in or view attendance reports.</div>
+<div class="desc" style="color:Red">@TempData["ErrorMessage"]</div>
 <br>
 @foreach (Course course in Model.Courses)
 {

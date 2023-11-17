@@ -44,7 +44,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
 		[HttpGet]
 		public ViewResult Report()
 		{
-            return View("~/Views/Shared/Report.cshtml",new FacultyReportViewModel
+            return View("~/Views/Shared/Report.cshtml",new ReportViewModel
             {
                 Courses = context.Courses.Include(c => c.Instructor)
                         .Include(c => c.Students)

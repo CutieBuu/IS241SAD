@@ -26,7 +26,7 @@ namespace StudentAttendanceTracker.Models.Helpers
             wb = excel.Workbooks.Add(XlSheetType.xlWorksheet);
             ws = (Worksheet)wb.Worksheets[1];
 
-            GenerateReport(model, wb, ws);
+            GenerateReport(model, ws);
         
 
             ws.Columns.AutoFit();
@@ -39,7 +39,7 @@ namespace StudentAttendanceTracker.Models.Helpers
         }
 
         [MethodTimer.Time]
-        private static void GenerateReport(StudentsInCourse model, Workbook wb, Worksheet ws)
+        private static void GenerateReport(StudentsInCourse model, Worksheet ws)
         {
             List<DateTime> datesBetween;
             if (model.StartDate == null)
@@ -104,59 +104,9 @@ namespace StudentAttendanceTracker.Models.Helpers
             }
         }
 
-        private static void CreateStudentReport(StudentReportViewModel model, Workbook wb, Worksheet ws)
-        {
-            List<DateTime> datesBetween;
-            if (model.StartDate == null)
-            {
-                model.StartDate = SemesterStartDate;
-            }
-            if (model.EndDate == null)
-            {
-                model.EndDate = SemesterEndDate;
-            }
-
-            datesBetween = HelperMethods.GetDatesBetween(model.StartDate.Value.Date, model.EndDate.Value.Date, HelperMethods.WeekType.ExcludeWeekends).ToList();
-
-
-
-            ws.Cells[1, 1] = model.Course.CourseName;
-            ws.Cells[1, 1].EntireColumn.Font.Bold = true;
-            ws.Cells[1, 1].EntireRow.Font.Bold = true;
-            ws.Cells[2, 1] = model.Student.FirstName.FirstCharToUpper() + " " + model.Student.LastName.FirstCharToUpper();
-
-            for (int i = 0; i < datesBetween.Count; i++)
-            {
-                if (datesBetween[i].Date > DateTime.Now.Date)
-                {
-                    break;
-                }
-
-                ws.Cells[1, i + 2] = datesBetween[i].ToString("MM/dd/yyyy");
-                var log = model.AttendanceLogs.FirstOrDefault(x => x.SignInTime.Value.Date == datesBetween[i].Date);
-
-                if (log == null)
-                {
-                    ws.Cells[2, i + 2] = "Absent";
-                    ws.Cells[2, i + 2].Interior.Color = XlRgbColor.rgbRed;
-                    continue;
-                }
-                if (log.Tardy)
-                {
-                    ws.Cells[2, i + 2] = "Tardy";
-                    ws.Cells[2, i + 2].Interior.Color = XlRgbColor.rgbYellow;
-                }
-                else
-                {
-                    ws.Cells[2, i + 2] = "Present";
-                    ws.Cells[2, i + 2].Interior.Color = XlRgbColor.rgbGreen;
-                }
-
-
-            }
-        
+       
            
-        }
+        
     }
 
 }

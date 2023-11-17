@@ -39,7 +39,7 @@ else
         
 }
 
-    <a asp-action="Report" asp-route-id="@Model.Course.CourseId" class="a-center a-main">Generate Report</a>
+    <a asp-action="Report" asp-controller="Student" asp-route-id="@Model.Course.CourseId" class="a-center a-main">Generate Report</a>
 
 <div class="navbar">
     <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
