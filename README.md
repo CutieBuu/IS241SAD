@@ -16,3 +16,4 @@ This project requires any way of running a .NET 7.0 ASP.NET Core MVC Project suc
   <li><a href="https://www.jetbrains.com/rider/download/#section=windows">JetBrains Rider</li>
 </ul>
 This project uses AspNetCore identity and EntityFrameworkCore with a Microsoft SQL Server provider.
+This project also requires Microsoft Excel to be downloaded on your computer.
