@@ -167,14 +167,15 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         [HttpGet]
         public ViewResult Report()
         {
-            return View(new FacultyReportViewModel
+            return View("~/Views/Shared/Report.cshtml", new FacultyReportViewModel
             {
                 Courses = _context.Courses.Include(c => c.Instructor)
                         .Include(c => c.Students)
                         .Where(c => c.Students.Count > 0 && c.Instructor != null)
                         .OrderBy(c => c.CourseId)
-                        .ToList()
-            });
+                        .ToList(),
+                Caller = "Admin"
+            }) ; 
 
         }
 

@@ -91,7 +91,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
         [HttpGet]
         public IActionResult Report(int id)
         {
-            return View(new FacultyReportViewModel { CourseId = id });
+            return View("~/Views/Shared/Report.cshtml",new FacultyReportViewModel { CourseId = id, Caller = "Instructor" });
 
         }
 

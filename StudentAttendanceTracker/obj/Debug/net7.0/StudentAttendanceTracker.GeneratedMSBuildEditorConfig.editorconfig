@@ -84,10 +84,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmFjdWx0eVxWaWV3c1xRdWFsaWZpZWRTdGFmZlxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vgc43/source/repos/StudentAttendanceTracker/StudentAttendanceTracker/Areas/Faculty/Views/QualifiedStaff/Report.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmFjdWx0eVxWaWV3c1xRdWFsaWZpZWRTdGFmZlxSZXBvcnQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/vgc43/source/repos/StudentAttendanceTracker/StudentAttendanceTracker/Areas/Faculty/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmFjdWx0eVxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -126,6 +122,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/vgc43/source/repos/StudentAttendanceTracker/StudentAttendanceTracker/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vgc43/source/repos/StudentAttendanceTracker/StudentAttendanceTracker/Views/Shared/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFJlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vgc43/source/repos/StudentAttendanceTracker/StudentAttendanceTracker/Views/Shared/_ValidationScriptsPartial.cshtml]

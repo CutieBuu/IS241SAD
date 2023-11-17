@@ -3,10 +3,10 @@
     ViewData["Title"] = "STLCC Attendance Tracker - Instructor Report";
 }
 <!--html, css, & js written by Jacob Sadler-->
-<a asp-action="Report" asp-area="" asp-route-userType="Instructor" asp-controller="Report"><img src="~/images/logo.webp" class="stlcclogo"></a>
+<a asp-action="Home" asp-controller="Instructor"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>Generate Student Report</h1>
 <div class="desc">Fill out the  form to select what data you're looking for. Clicking "Generate Report" will download the report as a .xlsx file.</div>
-<form asp-controller="Instructor" asp-action="Report" method="post">
+<form asp-controller="Report" asp-route-userType="Instructor" asp-action="Report" method="post">
     <div class="formfield formfield-wide">
         <span asp-validation-for="StudentUsernames" style="color: red"></span>
     </div>

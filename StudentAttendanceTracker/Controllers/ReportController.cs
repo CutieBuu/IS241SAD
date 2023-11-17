@@ -25,6 +25,7 @@ namespace StudentAttendanceTracker.Controllers
         [HttpPost]
         public async Task<ActionResult> Report(FacultyReportViewModel model, string userType = "")
         {
+          
             if (model.CourseId == 0)
             {
                 //Change this
@@ -52,7 +53,14 @@ namespace StudentAttendanceTracker.Controllers
                         .OrderBy(c => c.CourseId)
                         .ToList();
                 ModelState.AddModelError("StartDate", "Start date must be before end date");
-                   
+                return userType switch
+                {
+                    "Instructor" => View("~/Areas/Faculty/Views/Instructor/Report.cshtml", model),
+                    "QualifiedStaff" => View("~/Areas/Faculty/Views/QualifiedStaff/Report.cshtml", model),
+                    "Admin" => View("~/Areas/Admin/Views/Admin/Report.cshtml", model),
+                    _ => RedirectToAction("Index", "Home"),
+                };
+
             }
             
             List<Student> students = new();
@@ -97,16 +105,7 @@ namespace StudentAttendanceTracker.Controllers
                 students = course.Students.OrderBy(s => s.LastName).ToList();
             }
 
-            if(ModelState.ErrorCount > 0)
-            {
-                return userType switch
-                {
-                    "Instructor" => View("~/Areas/Faculty/Views/Instructor/Report.cshtml", model),
-                    "QualifiedStaff" => View("~/Areas/Faculty/Views/QualifiedStaff/Report.cshtml", model),
-                    "Admin" => View("~/Areas/Admin/Views/Admin/Report.cshtml", model),
-                    _ => RedirectToAction("Index", "Home"),
-                };
-            }
+         
 
 
 
