@@ -41,14 +41,14 @@ namespace StudentAttendanceTracker.Controllers
                 return RedirectToAction("Home", "Instructor", new {Area = "Faculty"});
             }
             
-            if(course.Students.Any(s => s.UserId == id) == false )
-            {
-                TempData["ErrorMessage"] = $"You are not enrolled in {course.CourseName}";
-                return RedirectToAction("Home", "Student", new { Area = "Student" });
-            }
 
             if (model.Caller == "Student")
             {
+                if(!course.Students.Any(s => s.UserId == id))
+                {
+                    TempData["ErrorMessage"] = $"You are not enrolled in {course.CourseName}";
+                    return RedirectToAction("Home", "Student", new { Area = "Student" });
+                }
                 students.Add(_context.Students.First(s => s.StudentEmail == usernames[0]));
             }
             else
