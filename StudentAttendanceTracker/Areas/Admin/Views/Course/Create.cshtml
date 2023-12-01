@@ -4,7 +4,6 @@
 @model CreateCourseViewModel
 <!--html, css, & js written by Jacob Sadler-->
 
-<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>Create New Course</h1>
 <div class="desc">Use this form to create new courses. Pressing "Register Course" will implement the course into the database assuming all inputs are vaild.</div>
 
@@ -59,8 +58,3 @@
         <input class="submit adminsubmit" type="submit" value="Register Course">
     </div>
 </form>
-<div class="navbar">
-    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton" asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton" asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>

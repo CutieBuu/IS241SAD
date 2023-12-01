@@ -1,0 +1,37 @@
+﻿<!--html, css, & js written by Jacob Sadler-->
+@model ReportIssueViewModel
+
+<h1>Report Issue</h1>
+<div class="desc">Use this form to report a discrepancy. Include any important information that might help identify the issue.</div>
+<form class="adminform" asp-controller="Issue" method="post">
+    <!--<div class="formfield formfield-wide">
+        <label for="from">From:</label><br>
+        <input class="adminotherinput" type="text" id="from" name="from" placeholder="">
+    </div>-->
+    <div class="formfield formfield-wide">
+        <span asp-validation-for="Recipient" style="color: red"></span>
+    </div>
+    <div class="formfield formfield-wide">
+        <label asp-for="Recipient">Recipient Email:</label><br>
+        <input class="adminotherinput" type="text" id="to" asp-for="Recipient" placeholder="Email of recipient">
+    </div>
+    <div class="formfield formfield-wide">
+        <span asp-validation-for="Title" style="color: red"></span>
+    </div>
+    <div class="formfield formfield-wide">
+        <label asp-for="Title">Subject of Discrepancy:</label><br>
+        <input class="adminotherinput" type="text" id="title" asp-for="Title" placeholder="">
+    </div>
+    <div class="formfield formfield-wide">
+        <span asp-validation-for="Description" style="color: red"></span>
+    </div>
+    <div class="formfield">
+        <label asp-for="Description">Explanation of Discrepancy:</label><br>
+        <textarea class="reportissueff" type="text" id="issue" asp-for="Description" placeholder=""></textarea>
+    </div>
+    <div class="formfield">
+        <input class="submit adminsubmit" type="submit" value="Send Report">
+    </div>
+    <input type="hidden" asp-for="Sender" />
+    <input type="hidden" asp-for="Caller" />
+</form>

@@ -5,16 +5,10 @@
 <!DOCTYPE html>
 <!--html, css, & js written by Jacob Sadler-->
 
-<a asp-area="Faculty" asp-controller="QualifiedStaff" asp-action="Home"><img src="/images/logo.webp" class="stlcclogo"></a>
 <h1>Welcome back, @Model.FirstName.FirstCharToUpper()</h1>
 <div class="desc">As a qualified staff member, you may generate attendance reports to carry out tasks such as verifying financial aid and attendance requirements.</div>
 <br>
 <div class="desc">Select "Generate Report" to view and download attendance reports. Will download as a .xlsx file.</div>
 <br />
 <a asp-action="Report" asp-controller="QualifiedStaff" class="a-main a-center">Generate Report</a>
-
-<div class="navbar">
-	<a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-	<a class="navbarbutton" asp-area="Faculty" asp-action="Home" asp-controller="QualifiedStaff"><img src="~/images/home.png" class="navbaricon">Home</a>
-	<a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>
+<vc:success-popup></vc:success-popup>

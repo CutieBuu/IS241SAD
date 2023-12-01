@@ -118,7 +118,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         {
             ModelState.Clear();
 
-            if (_context.Courses.Include(c => c.Instructor).Any(c => c.Instructor.InstructorEmail == model.Course.Instructor.InstructorEmail
+            if (_context.Courses.Include(c => c.Instructor).Any(c => c.Instructor.InstructorEmail == model.Course.Instructor!.InstructorEmail
             && c.CourseName == model.Course.CourseName && c.CourseStartTime.TimeOfDay == model.Course.CourseStartTime.TimeOfDay && c.CourseEndTime.TimeOfDay == model.Course.CourseEndTime.TimeOfDay))
             {
                 ModelState.AddModelError("Course", "Please enter changes to the course.");
@@ -126,7 +126,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
                 ViewBag.Students = _context.Courses.Include(c => c.Students).First(c => c.CourseId == model.Course.CourseId).Students!.ToList();
                 return View("Edit", model);
             }
-            var instructor = _context.Instructors.FirstOrDefault(i => i.InstructorEmail == model.Course.Instructor.InstructorEmail);
+            var instructor = _context.Instructors.FirstOrDefault(i => i.InstructorEmail == model.Course.Instructor!.InstructorEmail);
 
             //model.CourseDisplayName = coursePreChanges.CourseName;
             if (model.Course.CourseStartTime >= model.Course.CourseEndTime)

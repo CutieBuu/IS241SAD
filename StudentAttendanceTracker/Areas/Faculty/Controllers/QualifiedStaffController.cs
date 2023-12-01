@@ -56,8 +56,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
 
 		}
 
-        
-	
-        
+
+
     }
 }

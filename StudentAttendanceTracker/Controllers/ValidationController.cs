@@ -5,12 +5,8 @@ using StudentAttendanceTracker.Models.Initialization;
 
 namespace StudentAttendanceTracker.Controllers
 {
-    public class ValidationController : Controller
+    public class ValidationController(AttendanceTrackerContext ctx) : Controller
     {
-        private readonly AttendanceTrackerContext _context;
-
-        public ValidationController(AttendanceTrackerContext ctx) => _context = ctx;
-
         public JsonResult CheckDatesAreSequential(string StartDate, string EndDate)
         {
             if(StartDate.IsNullOrEmpty() || EndDate.IsNullOrEmpty())
@@ -51,7 +47,7 @@ namespace StudentAttendanceTracker.Controllers
                 {
                     return Json("Please enter a valid username");
                 }
-                if(!_context.Students.Any(s => s.StudentEmail == username))
+                if(!ctx.Students.Any(s => s.StudentEmail == username))
                 {
                     return Json($"Username {username} does not exist");
                 }
@@ -60,6 +56,43 @@ namespace StudentAttendanceTracker.Controllers
         }
 
 
-       
+        public JsonResult EmailIsValid(string? recipient)
+        {
+            if(recipient.IsNullOrEmpty())
+            {
+                return Json("Please enter an recipient address");
+            }
+            
+            try
+            {
+                recipient = recipient.Replace(" ", "");
+                 var addr = new System.Net.Mail.MailAddress(recipient);
+                return addr.Address == recipient ? Json(true) : Json("Please enter a valid email address");
+            }
+            catch
+            {
+                return Json("Please enter a valid recipient address");
+            }
+        }
+
+        public JsonResult TitleIsValid(string? title)
+        {
+            if(title.IsNullOrEmpty())
+            {
+                return Json("Please enter a title");
+            }
+            return Json(true);
+        }
+
+        public JsonResult DescriptionIsValid(string? description)
+        {
+            if (description.IsNullOrEmpty())
+            {
+                return Json("Please enter a description");
+            }
+            return Json(true);
+        }
+
+
     }
 }

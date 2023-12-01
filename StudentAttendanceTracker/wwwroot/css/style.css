@@ -39,6 +39,7 @@ div.container-main { /**Div container for all pages**/
     background-color: rgb(239, 237, 253);
 }
 
+
 div.container-wide {
     width: 900px !important;
 }
@@ -540,6 +541,17 @@ td.present {
 td.absent {
     background-color: rgba(243, 141, 141, 0.377);
 }
+.reportissueff {
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 424px;
+    height: 95px;
+    padding-bottom: 20px;
+    resize: none;
+}
 
 @media (max-width: 950px) {
     div.container-wide {
@@ -585,6 +597,10 @@ td.absent {
 @media (max-width: 630px) { /**Resizing for mobile**/
     div.container-main {
         width: 250px;
+    }
+
+    .reportissueff {
+        width: 200px;
     }
 
     .formfield-dropdown {

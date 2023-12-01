@@ -3,7 +3,6 @@
     ViewData["Title"] = $"STLCC Attendance Tracker - {Model.Caller} Report";
 }
 <!--html, css, & js written by Jacob Sadler-->
-<a asp-action="Home" asp-controller="@Model.Caller"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>Generate Student Report</h1>
 <div class="desc">Fill out the  form to select what data you're looking for. Clicking "Generate Report" will download the report as a .xlsx file.</div>
 <form class="adminform" asp-action="Report" asp-area="" asp-controller="Report" method="post">
@@ -64,8 +63,3 @@
     </div>
     <input type="hidden" asp-for="Caller" />
 </form> 
-<div class="navbar">
-    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton" asp-area="@(Model.Caller == "Admin" || Model.Caller == "Student" ? Model.Caller : "Faculty")" asp-action="Home" asp-controller="@Model.Caller"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>

@@ -176,6 +176,5 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         }
 
 
-
     }
 }

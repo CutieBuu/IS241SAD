@@ -26,10 +26,13 @@ public partial class Assistance
     /// <summary>
     /// Foreign key for the course assosciated with this object
     /// </summary>
-    public int StudentId { get; set; }
+    public string UserId { get; set; } = string.Empty;
 
-    /// <summary>
-    /// Course object for the course associated with this object
-    /// </summary>
-    public Student? Student { get; set; }
+    public string Title { get; set; } = string.Empty;
+
+    public string Description { get; set; } = string.Empty;
+
+
+
+
 }

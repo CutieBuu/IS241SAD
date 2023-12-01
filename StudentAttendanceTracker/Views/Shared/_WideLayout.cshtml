@@ -1,19 +1,59 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="~/css/style.css">
-        <link rel="icon" href="~/images/icon.webp">
-        <title>@ViewData["Title"]</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <!--Icon probably needs to change because on white themed browsers it looks like its not there-->
+    <link rel="icon" href="~/images/icon.webp">
+    <title>@ViewData["Title"]</title>
 </head>
 <body>
-    <main class="cmain">
-        <div class="container-main container-wide">
-        @RenderBody()
-        </div>
-    </main>
+    <div class="container-main container-wide">
+        <main class="cmain">
+
+            @{
+                if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    string role;
+
+                    if (User.IsInRole("Admin"))
+                    {
+                        role = "Admin";
+                    }
+                    else if (User.IsInRole("Instructor"))
+                    {
+                        role = "Instructor";
+                    }
+                    else if (User.IsInRole("QualifiedStaff"))
+                    {
+                        role = "QualifiedStaff";
+                    }
+                    else
+                    {
+                        role = "Student";
+                    }
+                    <a asp-controller="@role" asp-area="@(role == "QualifiedStaff" || role == "Instructor"? "Faculty" : role)" asp-action="Home"><img src="~/images/logo.webp" class="stlcclogo"></a>
+                    @RenderBody();
+                    <div class="navbar navbarwide">
+                        <a class="navbarbutton navbarbuttonwide" asp-action="Issue" asp-controller="Issue" asp-area="" asp-route-role="@role"><img src="~/images/report.png" class="navbaricon">Report Issue</a>
+                        <a class="navbarbutton navbarbuttonwide" asp-action="Home" asp-controller="@role" asp-area="@(role == "QualifiedStaff" || role == "Instructor"? "Faculty" : role)"><img src="~/images/home.png" class="navbaricon">Home</a>
+                        <a class="navbarbutton navbarbuttonwide" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
+                    </div>
+                }
+                else
+                {
+                    <a asp-controller="Home" asp-action="Index" asp-area=""><img src="~/images/logo.webp" class="stlcclogo"></a>
+                    @RenderBody();
+                }
+            }
+        </main>
+    </div>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>

@@ -2,7 +2,6 @@
 <!--html, css, & js written by Jacob Sadler-->
 
 
-<a asp-area="Faculty" asp-controller="Instructor" asp-action="Home"><img src="/images/logo.webp" class="stlcclogo"></a>
 <h1>Welcome back, @Model.FirstName.FirstCharToUpper()</h1>
 <div class="desc">Select a course to view currently enrolled students and generate access codes.</div>
 <div class="desc" style="color:red">@TempData["ErrorMessage"]</div>
@@ -11,8 +10,4 @@
 <a asp-action="Course" asp-controller="Instructor" asp-route-id="@c.CourseId" class="a-main">@c.CourseName</a>
 }
 <br>
-<div class="navbar">
-	<a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-	<a class="navbarbutton" asp-area="Faculty" asp-action="Home" asp-controller="Instructor"><img src="~/images/home.png" class="navbaricon">Home</a>
-	<a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>
+<vc:success-popup></vc:success-popup>

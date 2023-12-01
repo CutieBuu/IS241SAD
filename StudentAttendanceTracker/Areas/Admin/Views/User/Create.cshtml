@@ -3,7 +3,6 @@
 }
 @model RegisterViewModel
 <!--html, css, & js written by Jacob Sadler-->
-<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>Create New User</h1>
 <div class="desc">Use this form to create new users. Pressing "Register User" will implement the user into the database assuming all inputs are vaild.</div>
         
@@ -80,8 +79,3 @@
         <input class="submit adminsubmit" type="submit" value="Register User">
     </div>
 </form>
-<div class="navbar">
-    <a class="navbarbutton " href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton " asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton " asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>

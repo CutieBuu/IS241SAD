@@ -5,7 +5,6 @@
 }
 @model List<Course>
 
-<a asp-action="Home" asp-area="Admin" asp-controller="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>Admin Course Portal</h1>
 <div class="desc">Here you may edit and delete courses that are currently in the database.</div>
 <br>
@@ -43,10 +42,6 @@
     }
 
 </table>
-<div class="navbar">
-    <a class="navbarbutton navbarbuttonwide" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton navbarbuttonwide" asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton navbarbuttonwide" asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>
+
 
 

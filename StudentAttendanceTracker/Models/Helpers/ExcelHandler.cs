@@ -38,7 +38,7 @@ namespace StudentAttendanceTracker.Models.Helpers
             return Task.FromResult(fileName);
         }
 
-        [MethodTimer.Time]
+    
         private static void GenerateReport(StudentsInCourse model, Worksheet ws)
         {
             List<DateTime> datesBetween;

@@ -15,7 +15,8 @@ using StudentAttendanceTracker.Models.Initialization;
 using StudentAttendanceTracker.Models.ViewModels;
 using StudentAttendanceTracker.Models.ExcelModels;
 using Microsoft.IdentityModel.Tokens;
-using MethodTimer;
+
+using System.Runtime.InteropServices;
 
 namespace StudentAttendanceTracker.Areas.Student.Controllers
 {
@@ -27,6 +28,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
     [Area("Faculty")]
     public class InstructorController : Controller
     {
+
         private readonly AttendanceTrackerContext context;
 
         private readonly SignInManager<User> signInManager;
@@ -96,11 +98,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
 
         }
 
-        
-     
+ 
 
-   
-
-    
     }
 }

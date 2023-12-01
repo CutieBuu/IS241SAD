@@ -1,0 +1,17 @@
+﻿@if (TempData.Peek("SuccessMessage") != null)
+{
+    <dialog class="Message" id="Message">
+
+        <div class="desc" style="color: green">@TempData["SuccessMessage"]</div>
+        <br />
+        <div style="position:relative">
+            <button type="button" onclick="m.close()" class="submit " style="position: relative; width:24%; left: 38%" href="#">Close</button>
+        </div>
+    </dialog>
+    <script type="text/javascript">
+
+        const m = document.querySelector("dialog");
+        m.showModal();
+
+    </script>
+}

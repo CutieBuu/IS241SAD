@@ -6,7 +6,6 @@
 <!--html, css, & js written by Jacob Sadler-->
 
 
-<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>Update Current User</h1>
 <div class="desc">Use this form to update a current user's information. Pressing "Update User" will update the user into the database assuming all inputs are vaild.</div>
 <form class="adminform" asp-action="Edit" asp-controller="User" method="post">
@@ -64,8 +63,3 @@
     <input type="hidden" asp-for="Id" />
     
 </form>
-<div class="navbar">
-    <a class="navbarbutton " href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton " asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton " asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>

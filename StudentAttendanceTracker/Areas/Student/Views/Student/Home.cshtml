@@ -6,8 +6,6 @@
 <!--html, css, & js written by Jacob Sadler-->
 
 
-<a asp-action="Home" asp-area="Student" asp-controller="Student" ><img src="~/images/logo.webp" class="stlcclogo"></a>
-
 <h1>Welcome back, @Model.FirstName.FirstCharToUpper()</h1>
 
 <div class="desc">Select a course to check in or view attendance reports.</div>
@@ -18,11 +16,6 @@
     <a asp-action="Course" asp-route-id="@course.CourseId" asp-controller="Student" asp-area="Student" class="a-main">@course.CourseName</a>
 }
 
-<div class="navbar">
-    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton" asp-area="Student" asp-action="Home" asp-controller="Student"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>
 
 
-
+<vc:success-popup></vc:success-popup>

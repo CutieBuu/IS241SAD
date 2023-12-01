@@ -5,7 +5,6 @@
 }
 @model UserViewModel
 
-<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>Admin User Portal</h1>
 <div class="desc">Here you may edit and delete users that are currently in the database.</div>
 <br>
@@ -13,9 +12,9 @@
 {
     <h1 style="color:red">@TempData["ErrorMessage"]</h1>
 }
-else if (TempData.Peek("SuccessMessage") != null)
+else if (TempData.Peek("SuccessPopup") != null)
 {
-    <h1 style="color:green">@TempData["SuccessMessage"]</h1>
+    <h1 style="color:green">@TempData["SuccessPopup"]</h1>
 }
 <table class="admin">
         <tr class="reporttr trheader">
@@ -52,8 +51,3 @@ else if (TempData.Peek("SuccessMessage") != null)
     }
 
 </table>
-<div class="navbar">
-    <a class="navbarbutton navbarbuttonwide" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton navbarbuttonwide" asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton navbarbuttonwide" asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>

@@ -2,7 +2,6 @@
 <!--html, css, & js written by Jacob Sadler-->
 
 <main id="cmain">
-<a asp-action="Home" asp-controller="Student"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>@Model.Course.CourseName.FirstCharToUpper()</h1>
 <div class="desc">This is your course page for @Model.Course.CourseName.FirstCharToUpper(). Here, you can log your attendance and generate a personalized attendance report for @Model.Course.CourseName.FirstCharToUpper().</div>
 <br>
@@ -28,7 +27,7 @@ else
 {
     <form asp-action="CheckIn" asp-controller="Student">
         
-        <div class="desc" style="color: green">@TempData["SuccessMessage"]</div>
+        <div class="desc" style="color: green">@TempData["SuccessPopup"]</div>
         <div class="desc" style="color: red">@TempData["ErrorMessage"]</div>
         <br>
                 
@@ -41,11 +40,7 @@ else
 
     <a asp-action="Report" asp-controller="Student" asp-route-id="@Model.Course.CourseId" class="a-center a-main">Generate Report</a>
 
-<div class="navbar">
-    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton" asp-action="Home" asp-controller="Student"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>
+
 
 @if (TempData.Peek("ErrorMessage") is not null && Model.AccessCode is null)
 {

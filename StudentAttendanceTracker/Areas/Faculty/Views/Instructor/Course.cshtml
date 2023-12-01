@@ -4,7 +4,6 @@
 
 
 
-<a asp-action="Home" asp-controller="Instructor"><img src="/images/logo.webp" class="stlcclogo"></a>
 <h1>Attendance Records for: @Model.CourseName</h1>
 <div class="desc">Currently Enrolled Students</div>
 <br>
@@ -75,10 +74,5 @@ else
 <div class="desc">Select "Generate Report" to view and download attendance reports. Will download as a .xlsx file.</div>
 <br>
 <a asp-action="Report" asp-route-id ="@Model.CourseId" asp-controller="Instructor" class="a-main a-center">Generate Report</a>
-<div class="navbar">
-    <a class="navbarbutton" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton" asp-area="Faculty" asp-action="Home" asp-controller="Instructor"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton" asp-area="" asp-action="LogOut" asp-controller="Home"><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>
 
 

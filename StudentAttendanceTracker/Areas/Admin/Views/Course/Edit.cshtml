@@ -3,7 +3,6 @@
     Layout = "_WideLayout";
 }
 @model EditCourseViewModel
-<a asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/logo.webp" class="stlcclogo"></a>
 <h1>Update Current Course</h1>
 <div class="desc">Use this page to update a current course's information and withdraw students. Pressing "Update Course Info" will update the course's info in the database assuming all inputs are vaild.</div>
 <br>
@@ -136,8 +135,3 @@
         }
     }
 </table>
-<div class="navbar">
-    <a class="navbarbutton navbarbuttonwide" href=#><img src="~/images/report.png" class="navbaricon">Report Issue</a>
-    <a class="navbarbutton navbarbuttonwide" asp-action="Home" asp-controller="Admin" asp-area="Admin"><img src="~/images/home.png" class="navbaricon">Home</a>
-    <a class="navbarbutton navbarbuttonwide" asp-action="LogOut" asp-controller="Home" asp-area=""><img src="~/images/signout.png" class="navbaricon">Sign Out</a>
-</div>

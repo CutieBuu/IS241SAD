@@ -56,7 +56,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
             {
 
                 DateTime now = new(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-                DateTime courseExpiration = course.CourseStartTime.AddMinutes(2);
+                DateTime courseExpiration = course.CourseStartTime.AddMinutes(5);
                 if (CheckedInToday(model, student))
                 {
                     TempData["ErrorMessage"] = "You have already logged your attendance for this class today.";
@@ -102,7 +102,7 @@ namespace StudentAttendanceTracker.Areas.Student.Controllers
             StudentUsernames = GetStudent().StudentEmail,
             CourseId = id});
 
-    
+
 
         private bool CheckedInToday(CheckInViewModel model, Models.DatabaseModels.Student student) =>
             context.AttendanceLogs.Where(x => x.Code == model.AccessCode).Where(x => x.StudentID == student.StudentId).Any(x => x.SignInTime.Value.Date == DateTime.Now.Date);
