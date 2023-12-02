@@ -26,10 +26,6 @@ public partial class AttendanceTrackerContext : IdentityDbContext<User>
 
     }
 
-    /// <summary>
-    /// List of assistance objects generated from the database rows
-    /// </summary>
-	public virtual DbSet<Assistance> Assistances { get; set; }
 
     /// <summary>
     /// List of course objects generated from the database rows

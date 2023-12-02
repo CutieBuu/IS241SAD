@@ -17,7 +17,7 @@ namespace StudentAttendanceTracker.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.11")
+                .HasAnnotation("ProductVersion", "8.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -170,7 +170,7 @@ namespace StudentAttendanceTracker.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.AccessCode", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.AccessCode", b =>
                 {
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(450)");
@@ -185,7 +185,7 @@ namespace StudentAttendanceTracker.Migrations
                     b.ToTable("AccessCodes");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Administrator", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Administrator", b =>
                 {
                     b.Property<int>("AdministratorId")
                         .ValueGeneratedOnAdd()
@@ -216,33 +216,7 @@ namespace StudentAttendanceTracker.Migrations
                     b.ToTable("Admins");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Assistance", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("StudentId");
-
-                    b.ToTable("Assistances");
-                });
-
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Attendance", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Attendance", b =>
                 {
                     b.Property<int>("AttendanceId")
                         .ValueGeneratedOnAdd()
@@ -275,7 +249,7 @@ namespace StudentAttendanceTracker.Migrations
                     b.ToTable("AttendanceLogs");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Course", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Course", b =>
                 {
                     b.Property<int>("CourseId")
                         .ValueGeneratedOnAdd()
@@ -368,7 +342,7 @@ namespace StudentAttendanceTracker.Migrations
                         });
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Instructor", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Instructor", b =>
                 {
                     b.Property<int>("InstructorId")
                         .ValueGeneratedOnAdd()
@@ -399,7 +373,7 @@ namespace StudentAttendanceTracker.Migrations
                     b.ToTable("Instructors");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.QualifiedStaff", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.QualifiedStaff", b =>
                 {
                     b.Property<int>("QualifiedStaffId")
                         .ValueGeneratedOnAdd()
@@ -430,7 +404,7 @@ namespace StudentAttendanceTracker.Migrations
                     b.ToTable("QualifiedStaff");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Student", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Student", b =>
                 {
                     b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd()
@@ -461,7 +435,7 @@ namespace StudentAttendanceTracker.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.User", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.Identity.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -536,13 +510,13 @@ namespace StudentAttendanceTracker.Migrations
 
             modelBuilder.Entity("CourseStudent", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.Course", null)
+                    b.HasOne("StudentAttendanceTracker.Models.DatabaseModels.Course", null)
                         .WithMany()
                         .HasForeignKey("CoursesCourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("StudentAttendanceTracker.Models.Student", null)
+                    b.HasOne("StudentAttendanceTracker.Models.DatabaseModels.Student", null)
                         .WithMany()
                         .HasForeignKey("StudentsStudentId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -560,7 +534,7 @@ namespace StudentAttendanceTracker.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.User", null)
+                    b.HasOne("StudentAttendanceTracker.Models.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -569,7 +543,7 @@ namespace StudentAttendanceTracker.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.User", null)
+                    b.HasOne("StudentAttendanceTracker.Models.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -584,7 +558,7 @@ namespace StudentAttendanceTracker.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("StudentAttendanceTracker.Models.User", null)
+                    b.HasOne("StudentAttendanceTracker.Models.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -593,16 +567,16 @@ namespace StudentAttendanceTracker.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.User", null)
+                    b.HasOne("StudentAttendanceTracker.Models.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.AccessCode", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.AccessCode", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.Course", "Course")
+                    b.HasOne("StudentAttendanceTracker.Models.DatabaseModels.Course", "Course")
                         .WithMany()
                         .HasForeignKey("CourseID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -611,9 +585,9 @@ namespace StudentAttendanceTracker.Migrations
                     b.Navigation("Course");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Administrator", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Administrator", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.User", "User")
+                    b.HasOne("StudentAttendanceTracker.Models.Identity.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -622,30 +596,13 @@ namespace StudentAttendanceTracker.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Assistance", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Attendance", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.Course", "Course")
-                        .WithMany()
-                        .HasForeignKey("CourseId");
-
-                    b.HasOne("StudentAttendanceTracker.Models.Student", "Student")
-                        .WithMany()
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Attendance", b =>
-                {
-                    b.HasOne("StudentAttendanceTracker.Models.AccessCode", "AccessCode")
+                    b.HasOne("StudentAttendanceTracker.Models.DatabaseModels.AccessCode", "AccessCode")
                         .WithMany()
                         .HasForeignKey("AccessCodeCode");
 
-                    b.HasOne("StudentAttendanceTracker.Models.Student", "Student")
+                    b.HasOne("StudentAttendanceTracker.Models.DatabaseModels.Student", "Student")
                         .WithMany()
                         .HasForeignKey("StudentID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -656,18 +613,18 @@ namespace StudentAttendanceTracker.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Course", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Course", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.Instructor", "Instructor")
+                    b.HasOne("StudentAttendanceTracker.Models.DatabaseModels.Instructor", "Instructor")
                         .WithMany("Courses")
                         .HasForeignKey("InstructorId");
 
                     b.Navigation("Instructor");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Instructor", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Instructor", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.User", "User")
+                    b.HasOne("StudentAttendanceTracker.Models.Identity.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -676,9 +633,9 @@ namespace StudentAttendanceTracker.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.QualifiedStaff", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.QualifiedStaff", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.User", "User")
+                    b.HasOne("StudentAttendanceTracker.Models.Identity.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -687,9 +644,9 @@ namespace StudentAttendanceTracker.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Student", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Student", b =>
                 {
-                    b.HasOne("StudentAttendanceTracker.Models.User", "User")
+                    b.HasOne("StudentAttendanceTracker.Models.Identity.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -698,7 +655,7 @@ namespace StudentAttendanceTracker.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("StudentAttendanceTracker.Models.Instructor", b =>
+            modelBuilder.Entity("StudentAttendanceTracker.Models.DatabaseModels.Instructor", b =>
                 {
                     b.Navigation("Courses");
                 });

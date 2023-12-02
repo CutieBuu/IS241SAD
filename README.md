@@ -9,7 +9,7 @@ This project is a Student Attendance Tracker website made for IS241.
   <li>Application Administrators can manage site functioning and handle problem reports</li>
 </ul>
 <h1>Requirements</h1>
-This project requires any way of running a .NET 8.0 ASP.NET Core MVC Project such as
+This project requires any way of running a .NET 7.0 ASP.NET Core MVC Project such as
 <ul>
   <li><a href="https://visualstudio.microsoft.com/vs/">Visual Studio 2022 (Windows)</a></li>
   <li><a href="https://code.visualstudio.com/">Visual Studio Code (Mac, Linux, Windows)</a></li>

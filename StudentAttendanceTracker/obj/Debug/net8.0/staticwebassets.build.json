@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S5CVStGxtaqkIYntENVmUsUl98/p2isge8jR1bKwLyA=",
+  "Hash": "nm7q5mOV5x+Ih81kIoXJigtrV0F/maBtfv0Shy0vbTk=",
   "Source": "StudentAttendanceTracker",
   "BasePath": "_content/StudentAttendanceTracker",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "StudentAttendanceTracker\\wwwroot",
       "Source": "StudentAttendanceTracker",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "Pattern": "**"
     }
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "C:\\Users\\vgc43\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.0\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\bundle\\StudentAttendanceTracker.styles.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\bundle\\StudentAttendanceTracker.styles.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "StudentAttendanceTracker.styles.css",
       "AssetKind": "All",
@@ -1173,13 +1173,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\bundle\\StudentAttendanceTracker.styles.css"
+      "OriginalItemSpec": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\bundle\\StudentAttendanceTracker.styles.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\StudentAttendanceTracker.bundle.scp.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\StudentAttendanceTracker.bundle.scp.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "StudentAttendanceTracker.bundle.scp.css",
       "AssetKind": "All",
@@ -1192,13 +1192,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\StudentAttendanceTracker.bundle.scp.css"
+      "OriginalItemSpec": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\StudentAttendanceTracker.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\css\\style.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\css\\style.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "css/style.css",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\favicon.ico",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\favicon.ico",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\background.jpg",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\background.jpg",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "images/background.jpg",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\images\\background.jpg"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\home.png",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\home.png",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "images/home.png",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home.png"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\icon.webp",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\icon.webp",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "images/icon.webp",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icon.webp"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\logo.png",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\logo.png",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "images/logo.png",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\logo.webp",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\logo.webp",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "images/logo.webp",
       "AssetKind": "All",
@@ -1328,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.webp"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\report.png",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\report.png",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "images/report.png",
       "AssetKind": "All",
@@ -1347,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot\\images\\report.png"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\signout.png",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\images\\signout.png",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "images/signout.png",
       "AssetKind": "All",
@@ -1366,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot\\images\\signout.png"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\js\\dropdown.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\js\\dropdown.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "js/dropdown.js",
       "AssetKind": "All",
@@ -1385,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot\\js\\dropdown.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\js\\modalbox.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\js\\modalbox.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "js/modalbox.js",
       "AssetKind": "All",
@@ -1404,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot\\js\\modalbox.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -1423,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -1442,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1461,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1480,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -1499,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -1518,10 +1518,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -1537,10 +1537,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1556,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -1575,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -1594,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -1651,10 +1651,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -1670,10 +1670,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -1689,10 +1689,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -1708,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1727,10 +1727,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1746,10 +1746,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1765,10 +1765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1784,10 +1784,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -1803,10 +1803,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -1822,10 +1822,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1841,10 +1841,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1860,10 +1860,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1879,10 +1879,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1898,10 +1898,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1917,10 +1917,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1936,10 +1936,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1974,10 +1974,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1993,10 +1993,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -2012,10 +2012,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -2031,10 +2031,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -2050,10 +2050,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2069,10 +2069,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2088,10 +2088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2107,10 +2107,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2126,10 +2126,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2145,10 +2145,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2164,10 +2164,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2183,10 +2183,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2202,10 +2202,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2221,10 +2221,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2240,10 +2240,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -2259,10 +2259,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -2297,10 +2297,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2316,10 +2316,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -2335,10 +2335,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2354,10 +2354,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2373,10 +2373,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -2392,10 +2392,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -2411,10 +2411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -2430,10 +2430,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -2449,10 +2449,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -2468,10 +2468,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -2487,10 +2487,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SIL Open Font License.txt",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SIL Open Font License.txt",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SIL Open Font License.txt",
       "AssetKind": "All",
@@ -2506,10 +2506,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SIL Open Font License.txt"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Black.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Black.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-Black.otf",
       "AssetKind": "All",
@@ -2525,10 +2525,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-Black.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-BlackIt.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-BlackIt.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-BlackIt.otf",
       "AssetKind": "All",
@@ -2544,10 +2544,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-BlackIt.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Bold.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Bold.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-Bold.otf",
       "AssetKind": "All",
@@ -2563,10 +2563,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-Bold.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-BoldIt.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-BoldIt.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-BoldIt.otf",
       "AssetKind": "All",
@@ -2582,10 +2582,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-BoldIt.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-ExtraLight.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-ExtraLight.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-ExtraLight.otf",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-ExtraLight.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-ExtraLightIt.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-ExtraLightIt.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-ExtraLightIt.otf",
       "AssetKind": "All",
@@ -2620,10 +2620,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-ExtraLightIt.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-It.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-It.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-It.otf",
       "AssetKind": "All",
@@ -2639,10 +2639,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-It.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Light.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Light.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-Light.otf",
       "AssetKind": "All",
@@ -2658,10 +2658,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-Light.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-LightIt.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-LightIt.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-LightIt.otf",
       "AssetKind": "All",
@@ -2677,10 +2677,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-LightIt.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Regular.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Regular.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-Regular.otf",
       "AssetKind": "All",
@@ -2696,10 +2696,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-Regular.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Semibold.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-Semibold.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-Semibold.otf",
       "AssetKind": "All",
@@ -2715,10 +2715,10 @@
       "OriginalItemSpec": "wwwroot\\source-sans-pro\\SourceSansPro-Semibold.otf"
     },
     {
-      "Identity": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-SemiboldIt.otf",
+      "Identity": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\source-sans-pro\\SourceSansPro-SemiboldIt.otf",
       "SourceId": "StudentAttendanceTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
+      "ContentRoot": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\wwwroot\\",
       "BasePath": "_content/StudentAttendanceTracker",
       "RelativePath": "source-sans-pro/SourceSansPro-SemiboldIt.otf",
       "AssetKind": "All",

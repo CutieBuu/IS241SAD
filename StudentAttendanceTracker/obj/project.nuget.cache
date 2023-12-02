@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QN0nvwVRGOx43Dx892xaQUxZyHuJt/kuwzP2IJlGP8uCNTI5f00wKGhKDnu6zRKshzB8tCOFgYuui8NZk0FR4g==",
+  "dgSpecHash": "hs6z4lWEniICJRYSsU668WZ3kXEsIUBXC1WPMnP9/Vh+4U8eu1lE5tV7YlTesGtdDiXj2e1M7Prk6LbrqJzzYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vgc43\\source\\repos\\StudentAttendanceTracker\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
+  "projectFilePath": "D:\\C# Web Frameworks\\StudentAttendanceTracker\\StudentAttendanceTracker\\StudentAttendanceTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vgc43\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\vgc43\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
