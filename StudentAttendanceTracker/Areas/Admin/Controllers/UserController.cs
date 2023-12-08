@@ -40,10 +40,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Users()
         {
-            Instructor instructor = new Instructor();
-            string x = "x";
-            x = new string("hi");
-
+        
             UserViewModel model = new()
             {
                 Users = _userManager.Users,
