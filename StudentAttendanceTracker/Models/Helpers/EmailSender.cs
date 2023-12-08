@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 
+using Microsoft.AspNetCore.Mvc;
 using StudentAttendanceTracker.Models.ViewModels;
 using System.Security.Claims;
 using MailKit.Net.Smtp;

@@ -1,5 +1,5 @@
 ﻿
-
+//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 
 namespace StudentAttendanceTracker.Models.Helpers
 {
     public static class HelperMethods

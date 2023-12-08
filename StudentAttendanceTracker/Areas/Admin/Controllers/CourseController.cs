@@ -13,11 +13,9 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
     [ResponseCache(NoStore = true, Duration = 0)]
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
-    public class CourseController : Controller
+    public class CourseController(AttendanceTrackerContext context) : Controller
     {
-        private readonly AttendanceTrackerContext _context;
-
-        public CourseController(AttendanceTrackerContext context) => _context = context;
+        private readonly AttendanceTrackerContext _context = context;
 
         [HttpGet]
         public IActionResult Withdraw(int studentId, int courseId)
@@ -28,6 +26,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
             return RedirectToAction("Edit", "Course", new { id = courseId });
         }
 
+        [Route("[area]/[action]")]
         [HttpGet]
         public IActionResult Course() => View(_context.Courses.Include(c => c.Instructor).ToList());
 
@@ -98,7 +97,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
             
             Course course = new()
             {
-                InstructorId = instructor != null ? instructor.InstructorId : null,
+                InstructorId = instructor?.InstructorId,
                 CourseName = model.CourseName!,
                 CourseStartTime = ChangeDate(model.CourseStartTime),
                 CourseEndTime = ChangeDate(model.CourseEndTime)
@@ -195,6 +194,10 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
             {
                 Models.DatabaseModels.Student student = _context.Students.Include(s => s.Courses).FirstOrDefault(s => s.FirstName == model.Student.FirstName && s.LastName == model.Student.LastName && s.StudentEmail == model.Student.StudentEmail)
                     ?? new Models.DatabaseModels.Student();
+
+                
+
+                
                 if (student.StudentId == 0 || student.Courses == null)
                 {
                     ModelState.AddModelError("Student", $"\"{model.Student.FirstName} {model.Student.LastName} {model.Student.StudentEmail}\" does not exist");

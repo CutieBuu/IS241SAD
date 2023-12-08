@@ -4,10 +4,8 @@
 <h1>Report Issue</h1>
 <div class="desc">Use this form to report a discrepancy. Include any important information that might help identify the issue.</div>
 <form class="adminform" asp-controller="Issue" method="post">
-    <!--<div class="formfield formfield-wide">
-        <label for="from">From:</label><br>
-        <input class="adminotherinput" type="text" id="from" name="from" placeholder="">
-    </div>-->
+
+
     <div class="formfield formfield-wide">
         <span asp-validation-for="Recipient" style="color: red"></span>
     </div>

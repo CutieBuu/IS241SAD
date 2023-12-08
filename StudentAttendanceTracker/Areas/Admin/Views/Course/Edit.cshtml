@@ -7,6 +7,7 @@
 <div class="desc">Use this page to update a current course's information and withdraw students. Pressing "Update Course Info" will update the course's info in the database assuming all inputs are vaild.</div>
 <br>
 <h1 style="color:green">@TempData["SuccessMessage"]</h1>
+
 <form class="adminform" asp-action="UpdateCourse" asp-controller="Course" method="post">
     <div class="formfield">
         <label asp-for="Course.CourseName">Course Name:</label><br>
@@ -134,4 +135,7 @@
             }
         }
     }
+
 </table>
+
+<a asp-action="Course" asp-area="Admin" class="admincontrol admincontrolwide">Return to Course Portal</a>

@@ -1,4 +1,4 @@
-﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 https://github.com/vgc12
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using StudentAttendanceTracker.Models.Identity;

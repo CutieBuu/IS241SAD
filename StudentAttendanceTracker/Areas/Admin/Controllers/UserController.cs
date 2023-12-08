@@ -1,4 +1,4 @@
-﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 https://github.com/vgc12
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -40,6 +40,10 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Users()
         {
+            Instructor instructor = new Instructor();
+            string x = "x";
+            x = new string("hi");
+
             UserViewModel model = new()
             {
                 Users = _userManager.Users,
@@ -49,7 +53,7 @@ namespace StudentAttendanceTracker.Areas.Admin.Controllers
             {
                 user.RoleNames = await _userManager.GetRolesAsync(user);
             }
-            model.Users = model.Users.OrderBy(u => u.RoleNames[0]).ToList();
+            model.Users = model.Users.OrderBy(u => u.RoleNames[0]).ThenBy(u => u.LastName).ToList();
 
             return View(model);
         }

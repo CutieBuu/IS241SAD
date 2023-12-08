@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using StudentAttendanceTracker.Models.DatabaseModels;
 using System.ComponentModel.DataAnnotations;

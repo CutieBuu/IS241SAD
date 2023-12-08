@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Office.Interop.Excel;
 using StudentAttendanceTracker.Models.ExcelModels;
 using StudentAttendanceTracker.Models.ViewModels;

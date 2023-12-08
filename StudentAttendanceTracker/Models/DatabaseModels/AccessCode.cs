@@ -1,4 +1,4 @@
-﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 https://github.com/vgc12
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;

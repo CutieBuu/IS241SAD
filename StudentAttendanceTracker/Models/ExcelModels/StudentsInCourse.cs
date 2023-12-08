@@ -1,4 +1,5 @@
-﻿using StudentAttendanceTracker.Models.DatabaseModels;
+﻿//C# and Razor Code Written by Zaid Abuisba https://github.com/vgc12 
+using StudentAttendanceTracker.Models.DatabaseModels;
 namespace StudentAttendanceTracker.Models.ExcelModels
 {
     public class StudentsInCourse

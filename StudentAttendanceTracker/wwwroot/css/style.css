@@ -141,7 +141,43 @@ h1 {
     margin-bottom: 0px;
 }
 
+input.admincontrol {
+    border: none;
+    color: white;
+    background-color: rgb(0, 58, 112);
+    box-shadow: none;
+    height: 45px;
+    text-align: center;
+    border-radius: 6px;
+    width: 211px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+input.admincontrol:hover {
+    cursor: pointer;
+    background-color: rgb(36, 83, 153);
+}
+a.admincontrol {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: none;
+    color: white;
+    background-color: rgb(0, 58, 112);
+    box-shadow: none;
+    text-align: center;
+    border-radius: 6px;
+    width: 211px;
+    padding-top: 14px;
+    padding-bottom: 15px;
 
+    margin-left: 1px;
+    margin-right: 1px;
+}
+a.admincontrol:hover {
+    cursor: pointer;
+    background-color: rgb(36, 83, 153);
+}
 
 
 
@@ -553,7 +589,27 @@ td.absent {
     resize: none;
 }
 
+input.admincontrolwide {
+    width: 810px;
+    margin-left: 45px;
+}
+
+a.admincontrolwide {
+    width: 810px;
+    margin-left: 45px;
+}
+
 @media (max-width: 950px) {
+    input.admincontrolwide {
+        margin-left: 30px;
+        width: 540px;
+    }
+
+    a.admincontrolwide {
+        margin-left: 30px;
+        width: 540px;
+    }
+    
     div.container-wide {
         width: 600px;
     }
@@ -597,6 +653,17 @@ td.absent {
 @media (max-width: 630px) { /**Resizing for mobile**/
     div.container-main {
         width: 250px;
+    }
+
+    input.admincontrolwide {
+        width: 340px;
+    }
+
+    input.admincontrol {
+	    width: 98px;
+    }
+    a.admincontrol {
+	    width: 98px;
     }
 
     .reportissueff {

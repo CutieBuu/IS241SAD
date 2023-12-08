@@ -57,8 +57,10 @@
         <input class="adminotherinput" type="text" id="pword" asp-for="NewPassword" placeholder="Leave blank to keep current password">
     </div>
     <div class="formfield">
-        
-        <input class="submit adminsubmit" type="submit" value="Update User">
+        <input class="admincontrol" type="submit" value="Register User" />
+
+
+        <a asp-action="Users" asp-area="Admin" class="admincontrol">Cancel</a>
     </div>
     <input type="hidden" asp-for="Id" />
     
